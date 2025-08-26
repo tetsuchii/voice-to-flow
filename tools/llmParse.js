@@ -1,8 +1,11 @@
+//JSON formazas meg nem tokeletes!!!
+
 // tools/llmParse.js
 import fs from "fs";
 import path from "path";
 import Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
+import "dotenv/config";
 
 // ---------- 1️⃣ Zod schema for validation ----------
 const nodeSchema = z.object({
@@ -102,7 +105,7 @@ ${transcript}
 async function main() {
   try {
     const response = await client.messages.create({
-      model: "claude-3-opus-20240229",
+      model: "claude-opus-4-20250514",
       max_tokens: 1000,
       system: system,
       messages: [{ role: "user", content: user }],
