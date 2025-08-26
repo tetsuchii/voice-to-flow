@@ -24,20 +24,6 @@ Think of it as going from **user transcript → flow diagram → UI → code**, 
 
 ---
 
-## 🗂 Project Structure
-
-voice-to-flow/
-├─ data/
-│ ├─ login_scenario.txt # Example transcript
-│ └─ flow.json # Generated JSON flow
-├─ tools/
-│ └─ llmParse.js # Main processing script
-├─ .gitignore
-├─ package.json
-└─ README.md
-
----
-
 ## ⚙️ Getting Started
 
 1. Clone the repo:
