@@ -1,0 +1,3 @@
+The app starts on a login screen.
+If the email or password is wrong, show an error and let me retry.
+If it’s correct, go to the dashboard. Also let users reset password.

@@ -1,0 +1,95 @@
+{
+  "start": "login",
+  "pages": [
+    {
+      "id": "login",
+      "ui": {
+        "type": "form",
+        "fields": [
+          {
+            "name": "email",
+            "label": "Email",
+            "type": "email"
+          },
+          {
+            "name": "password",
+            "label": "Password",
+            "type": "password"
+          }
+        ],
+        "actions": [
+          {
+            "id": "loginBtn",
+            "label": "Log in",
+            "routeOn": "success"
+          },
+          {
+            "id": "forgot",
+            "label": "Forgot Password?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dashboard",
+      "ui": {
+        "type": "dashboard",
+        "widgets": [
+          {
+            "kind": "stat",
+            "title": "Welcome"
+          },
+          {
+            "kind": "list",
+            "title": "Recent Items"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reset",
+      "ui": {
+        "type": "form",
+        "fields": [
+          {
+            "name": "email",
+            "label": "Email",
+            "type": "email"
+          }
+        ],
+        "actions": [
+          {
+            "id": "resetBtn",
+            "label": "Send reset link",
+            "routeOn": "success"
+          }
+        ]
+      }
+    },
+    {
+      "id": "error",
+      "ui": {
+        "type": "message",
+        "severity": "error",
+        "text": "Incorrect credentials. Try again."
+      }
+    }
+  ],
+  "routes": [
+    {
+      "from": "login",
+      "to": "dashboard",
+      "when": "success"
+    },
+    {
+      "from": "login",
+      "to": "error",
+      "when": "failure"
+    },
+    {
+      "from": "error",
+      "to": "login",
+      "when": "retry"
+    }
+  ]
+}
