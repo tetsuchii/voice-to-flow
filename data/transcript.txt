@@ -1,0 +1,45 @@
+[Anna – Marketing menedzser]
+Köszönöm, hogy mindenki itt van. A mai cél az, hogy tisztázzuk, mit várunk az új weboldaltól. A nyomda szeretné a telefonos rendeléskövetést digitálisabbá tenni.
+
+[Balázs – Nyomda tulajdonos]
+Pontosan. Most állandóan hívogatnak minket az ügyfelek, hogy „kész van-e a rendelésem?”, és ez rengeteg időt visz el. Egy egyszerű weboldalt szeretnék, ahol az ügyfelek maguk tudják ellenőrizni a rendelés állapotát.
+
+[Eszter – UX designer]
+Tehát önkiszolgáló követés. Azt is szeretnéd, hogy a weboldalon új rendelést is lehessen leadni, vagy most csak az állapotlekérdezés a fontos?
+
+[Balázs – Nyomda tulajdonos]
+Most egyelőre csak az állapot. A rendelés leadása továbbra is e-mailen keresztül megy, de később bővíthetjük.
+
+[Dániel – Fejlesztő]
+Rendben. Akkor gondolkodjunk azon, hogyan fogjuk tárolni és megjeleníteni az adatokat. Van már valamilyen rendszeretek a rendelések kezelésére?
+
+[Balázs – Nyomda tulajdonos]
+Igen, van egy helyi Excel-táblázat, abban vezetjük mindent. Jó lenne, ha ez valahogy kapcsolódna a weboldalhoz.
+
+[Anna – Marketing menedzser]
+Első körben talán elég, ha a kollégák feltöltenek egy napi exportot. Később lehetne automatikus szinkronizáció is.
+
+[Eszter – UX designer]
+Értem. Az ügyfél szempontjából az útvonal így nézne ki: felmegy az oldalra, beírja a rendelési számát, és lát egy státuszt vagy folyamatjelzőt, például „gyártás alatt”, „átvehető”, vagy „kiszállítva”.
+
+[Dániel – Fejlesztő]
+Ez azt jelenti, hogy kell egy keresőmező, valamilyen adatbázis háttérrel. Szükség van felhasználói fiókra, vagy elég csak a rendelési szám alapján?
+
+[Balázs – Nyomda tulajdonos]
+Elég a rendelési szám. Az ügyfeleim nem szeretnének regisztrálni.
+
+[Anna – Marketing menedzser]
+És az arculat? Fontos, hogy az oldal a nyomda színeit és logóját használja.
+
+[Eszter – UX designer]
+Oké, tehát a kulcspontok:  
+1. Ügyfél beírja a rendelési számot → látja az állapotot.  
+2. Egyszerű, mobilbarát felület.  
+3. A személyzet tudja frissíteni az adatokat (Excel import).  
+4. Később: automatikus integráció.  
+
+[Dániel – Fejlesztő]
+Rendben hangzik. Az első fázisban készítek egy prototípust a rendeléslekérdező oldalból. Teszteljük pár ügyféllel.
+
+[Balázs – Nyomda tulajdonos]
+Tökéletes. Induljunk el ezzel a tervvel.

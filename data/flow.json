@@ -1,0 +1,89 @@
+{
+  "start": "home",
+  "nodes": [
+    {
+      "id": "home",
+      "kind": "page",
+      "title": "Főoldal",
+      "data": {
+        "description": "Nyomda weboldal főoldala rendelési szám keresővel"
+      }
+    },
+    {
+      "id": "search_order",
+      "kind": "action",
+      "title": "Rendelés keresése",
+      "data": {
+        "description": "Rendelési szám validálása és keresése az adatbázisban"
+      }
+    },
+    {
+      "id": "order_found",
+      "kind": "decision",
+      "title": "Rendelés találat",
+      "data": {
+        "description": "Eldönti, hogy a rendelési szám létezik-e"
+      }
+    },
+    {
+      "id": "order_status",
+      "kind": "page",
+      "title": "Rendelés állapota",
+      "data": {
+        "description": "Megjeleníti a rendelés aktuális állapotát (gyártás alatt, átvehető, kiszállítva)",
+        "statuses": [
+          "gyártás alatt",
+          "átvehető",
+          "kiszállítva"
+        ]
+      }
+    },
+    {
+      "id": "error_page",
+      "kind": "page",
+      "title": "Hiba oldal",
+      "data": {
+        "description": "Hibaüzenet megjelenítése, ha a rendelési szám nem található"
+      }
+    },
+    {
+      "id": "admin_upload",
+      "kind": "page",
+      "title": "Admin Excel feltöltés",
+      "data": {
+        "description": "Személyzet által használható oldal Excel fájl feltöltésére"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "home",
+      "to": "search_order",
+      "when": "rendelési szám beírása és keresés gomb"
+    },
+    {
+      "from": "search_order",
+      "to": "order_found"
+    },
+    {
+      "from": "order_found",
+      "to": "order_status",
+      "when": "rendelés megtalálva"
+    },
+    {
+      "from": "order_found",
+      "to": "error_page",
+      "when": "rendelés nem található"
+    },
+    {
+      "from": "error_page",
+      "to": "home",
+      "when": "vissza gomb"
+    },
+    {
+      "from": "order_status",
+      "to": "home",
+      "when": "új keresés gomb"
+    }
+  ]
+}
