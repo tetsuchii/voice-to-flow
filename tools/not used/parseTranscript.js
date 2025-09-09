@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { Flow } from "../schemas/flowSchema.js";
+import { Flow } from "../../schemas/flowSchema.js";
 
 /**
  * Super-naive parser for demo purposes.

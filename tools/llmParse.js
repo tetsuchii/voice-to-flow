@@ -1,5 +1,3 @@
-//JSON formazas meg nem tokeletes!!!
-
 // tools/llmParse.js
 import fs from "fs";
 import path from "path";

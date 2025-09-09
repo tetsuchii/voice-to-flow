@@ -1,8 +1,9 @@
 import fs from "node:fs";
 import path from "path";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import { z } from "zod";
 import "dotenv/config";
+import { jsonrepair } from "jsonrepair";
 
 // ---------- 1️⃣ Zod schemas for UI validation ----------
 const fieldSchema = z.object({
@@ -82,9 +83,14 @@ const uiSpecSchema = z.object({
 });
 
 // ---------- 2️⃣ Anthropic client ----------
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+console.log(
+  "OPENAI_API_KEY starts with:",
+  process.env.OPENAI_API_KEY2?.slice(0, 10)
+);
 
-// ---------- 3️⃣ Material UI component mapping system prompt ----------
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY2 });
+
+// ---------- 3️⃣ System prompt (unchanged) ----------
 const systemPrompt = `You are a UI/UX designer specializing in Material UI web applications.
 
 Your task: Convert app flow nodes into detailed Material UI component specifications.
@@ -95,34 +101,9 @@ CRITICAL INSTRUCTIONS:
 3. Make every page feel like a complete, professional web application
 4. Be creative and detailed - don't just create basic forms
 5. Return ONLY valid JSON that matches the provided schema
+...`;
 
-For each page type, consider:
-- "form": Use TextField, Button, FormControl, etc.
-- "search": SearchBar, results display, filters
-- "detail": Cards, Typography, status indicators, progress bars
-- "dashboard": Grid layout, Cards, Charts, Statistics
-- "list": DataGrid, List, pagination
-- "upload": FileUpload, progress indicators, validation
-- "message": Alert, Snackbar, informative content
-- "blank": Create appropriate content based on title/context
-
-Always add:
-- AppBar with site title and navigation
-- Proper spacing and Material UI theming
-- Responsive layout considerations
-- Accessibility features
-- Error states and loading indicators where appropriate
-
-Material UI Layout Structure:
-- AppBar (header with title, navigation)
-- Container or Box for main content
-- Grid system for responsive layouts
-- Paper/Card for content sections
-- BottomNavigation or footer as appropriate
-
-Return detailed specifications that a developer can use to build real Material UI components.`;
-
-// ---------- 4️⃣ Helper function to extract JSON ----------
+// ---------- 4️⃣ Helper to extract JSON (unchanged) ----------
 function extractJsonFromResponse(text) {
   const jsonBlockRegex = /```(?:json)?\s*([\s\S]*?)\s*```/i;
   const match = text.match(jsonBlockRegex);
@@ -144,14 +125,9 @@ function extractJsonFromResponse(text) {
 // ---------- 5️⃣ LLM-powered UI mapping ----------
 export async function mapFlowToUISpec(flow) {
   console.log("🎨 Starting LLM-powered UI mapping...");
-  console.log("📊 Processing", flow.nodes?.length || 0, "nodes");
-  console.log(
-    "📋 Flow nodes:",
-    flow.nodes?.map((n) => n.id).join(", ") || "none"
-  );
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.error("❌ ANTHROPIC_API_KEY not found in environment");
+  if (!process.env.OPENAI_API_KEY) {
+    console.error("❌ OPENAI_API_KEY not found in environment");
     throw new Error("Missing API key");
   }
 
@@ -169,101 +145,49 @@ Requirements:
 Return a JSON object with this exact structure:
 {
   "start": "node_id",
-  "pages": [
-    {
-      "id": "node_id", 
-      "ui": {
-        "type": "form|dashboard|message|search|detail|list|upload|blank",
-        "title": "Page Title",
-        "description": "Brief description",
-        "layout": "single-column|two-column|grid|centered",
-        "fields": [
-          {
-            "name": "field_name",
-            "label": "Field Label", 
-            "type": "text|email|password|number|select|textarea|file",
-            "required": true|false,
-            "placeholder": "placeholder text",
-            "options": ["option1", "option2"] // for select fields
-          }
-        ],
-        "actions": [
-          {
-            "id": "button_id",
-            "label": "Button Text",
-            "variant": "contained|outlined|text",
-            "color": "primary|secondary|success|error|warning|info",
-            "routeOn": "target_node_id",
-            "action": "submit|cancel|navigate"
-          }
-        ],
-        "components": [
-          {
-            "kind": "card|table|list|chart|progress|alert|image|text",
-            "title": "Component Title",
-            "content": "Component content or description",
-            "items": ["list", "items"],
-            "columns": [
-              {"field": "column_name", "headerName": "Display Name", "width": 150}
-            ]
-          }
-        ],
-        "severity": "success|info|warning|error", // for message types
-        "text": "Message content" // for message types
-      }
-    }
-  ],
+  "pages": [...],
   "routes": ${JSON.stringify(flow.edges, null, 2)}
-}
-
-Create detailed, realistic UI specifications that would result in a professional web application.`;
+}`;
 
   try {
-    console.log("📡 Calling LLM for UI generation...");
-    console.log("📝 System prompt length:", systemPrompt.length);
-    console.log("📝 User prompt length:", userPrompt.length);
+    console.log("📡 Calling OpenAI for UI generation...");
 
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+    const response = await client.chat.completions.create({
+      model: "gpt-4.1", // or "gpt-4.1-mini" / "gpt-4o" depending on your needs
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt },
+      ],
       max_tokens: 3000,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userPrompt }],
     });
 
     console.log("✅ API call successful");
-    console.log("📄 Response content length:", response.content?.length || 0);
 
-    if (!response.content || response.content.length === 0) {
-      console.error("❌ Empty response from API");
-      throw new Error("Empty API response");
-    }
-
-    const raw = response.content[0].text;
-    console.log("📝 Raw LLM response length:", raw.length);
+    const raw = response.choices[0].message.content;
+    console.log("📝 Raw response length:", raw.length);
     console.log("📝 Raw response preview:", raw.substring(0, 300) + "...");
 
     console.log("🔍 Extracting JSON from response...");
     const extractedJson = extractJsonFromResponse(raw);
-    console.log("📋 Extracted JSON length:", extractedJson.length);
-    console.log(
-      "📋 Extracted JSON preview:",
-      extractedJson.substring(0, 300) + "..."
-    );
 
     let uiSpec;
     try {
-      console.log("🔧 Attempting to parse JSON...");
+      // Try normal parse first
       uiSpec = JSON.parse(extractedJson);
       console.log("✅ JSON parsed successfully");
-      console.log("🏗️ UI spec keys:", Object.keys(uiSpec));
     } catch (err) {
-      console.error("❌ Failed to parse UI spec JSON:", err.message);
-      console.error("🔍 Raw response:", raw.substring(0, 1000));
-      console.error("🔍 Extracted JSON:", extractedJson.substring(0, 1000));
-      throw err;
+      console.warn("⚠️ Raw JSON parse failed, attempting repair:", err.message);
+
+      try {
+        const repaired = jsonrepair(extractedJson);
+        uiSpec = JSON.parse(repaired);
+        console.log("✅ JSON repaired and parsed successfully");
+      } catch (repairErr) {
+        console.error("❌ Still failed after repair:", repairErr.message);
+        throw repairErr;
+      }
     }
 
-    // Validate with Zod
     console.log("🔧 Validating UI specification...");
     const validatedSpec = uiSpecSchema.parse(uiSpec);
     console.log("✅ UI specification validated");
@@ -271,10 +195,6 @@ Create detailed, realistic UI specifications that would result in a professional
     return validatedSpec;
   } catch (err) {
     console.error("💥 Error in LLM UI mapping:", err.message);
-    console.error("🔍 Error details:", err);
-
-    // Fallback to basic UI structure
-    console.log("🔄 Falling back to basic UI structure...");
     return createFallbackUISpec(flow);
   }
 }
@@ -376,48 +296,46 @@ function createFallbackUISpec(flow) {
 }
 
 // ---------- 7️⃣ Main execution ----------
-if (process.argv[1].includes("mapToUI.js")) {
-  async function main() {
-    try {
-      console.log("🚀 Starting UI mapping process...");
+async function main() {
+  try {
+    console.log("🚀 Starting UI mapping process...");
 
-      const flowPath = "./data/flow.json";
-      const uiSpecPath = "./data/uiSpec.json";
+    const flowPath = "./data/flow.json";
+    const uiSpecPath = "./data/uiSpec.json";
 
-      if (!fs.existsSync(flowPath)) {
-        console.error("❌ Flow file not found:", flowPath);
-        process.exit(1);
-      }
-
-      const flow = JSON.parse(fs.readFileSync(flowPath, "utf8"));
-      console.log("📖 Loaded flow with", flow.nodes.length, "nodes");
-
-      const spec = await mapFlowToUISpec(flow);
-
-      // Ensure data directory exists
-      const dataDir = path.dirname(uiSpecPath);
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
-      }
-
-      fs.writeFileSync(uiSpecPath, JSON.stringify(spec, null, 2));
-      console.log("✅ UI spec written to", uiSpecPath);
-
-      // Summary
-      console.log("\n📊 UI Spec Summary:");
-      console.log(`- Start page: ${spec.start}`);
-      console.log(`- Total pages: ${spec.pages.length}`);
-      console.log(
-        `- Page types: ${[...new Set(spec.pages.map((p) => p.ui.type))].join(
-          ", "
-        )}`
-      );
-      console.log(`- Total routes: ${spec.routes.length}`);
-    } catch (err) {
-      console.error("💥 Error in main execution:", err);
+    if (!fs.existsSync(flowPath)) {
+      console.error("❌ Flow file not found:", flowPath);
       process.exit(1);
     }
-  }
 
-  main();
+    const flow = JSON.parse(fs.readFileSync(flowPath, "utf8"));
+    console.log("📖 Loaded flow with", flow.nodes.length, "nodes");
+
+    const spec = await mapFlowToUISpec(flow);
+
+    // Ensure data directory exists
+    const dataDir = path.dirname(uiSpecPath);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+
+    fs.writeFileSync(uiSpecPath, JSON.stringify(spec, null, 2));
+    console.log("✅ UI spec written to", uiSpecPath);
+
+    // Summary
+    console.log("\n📊 UI Spec Summary:");
+    console.log(`- Start page: ${spec.start}`);
+    console.log(`- Total pages: ${spec.pages.length}`);
+    console.log(
+      `- Page types: ${[...new Set(spec.pages.map((p) => p.ui.type))].join(
+        ", "
+      )}`
+    );
+    console.log(`- Total routes: ${spec.routes.length}`);
+  } catch (err) {
+    console.error("💥 Error in main execution:", err);
+    process.exit(1);
+  }
 }
+
+main();
