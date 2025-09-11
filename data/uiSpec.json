@@ -1,41 +1,56 @@
 {
-  "start": "home",
+  "start": "widget",
   "pages": [
     {
-      "id": "home",
-      "ui": {
-        "type": "search",
-        "title": "Főoldal",
-        "layout": "centered",
-        "fields": [
-          {
-            "name": "searchQuery",
-            "label": "Search",
-            "type": "text",
-            "placeholder": "Enter search term..."
-          }
-        ],
-        "actions": [
-          {
-            "id": "searchBtn",
-            "label": "Search",
-            "variant": "contained",
-            "color": "primary",
-            "action": "submit"
-          }
-        ]
-      }
-    },
-    {
-      "id": "search_order",
+      "id": "widget",
       "ui": {
         "type": "blank",
-        "title": "Rendelés keresése",
+        "title": "Enlight Widget in Banking App",
         "layout": "single-column"
       }
     },
     {
-      "id": "order_found",
+      "id": "onboarding_learn",
+      "ui": {
+        "type": "blank",
+        "title": "Onboarding - Learn",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "onboarding_earn",
+      "ui": {
+        "type": "blank",
+        "title": "Onboarding - Earn",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "onboarding_redeem",
+      "ui": {
+        "type": "blank",
+        "title": "Onboarding - Redeem",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "sso_link",
+      "ui": {
+        "type": "blank",
+        "title": "Link User Profile via SSO",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "dashboard",
+      "ui": {
+        "type": "blank",
+        "title": "Enlight Dashboard",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "activity_choice",
       "ui": {
         "type": "message",
         "title": "Processing",
@@ -45,10 +60,18 @@
       }
     },
     {
-      "id": "order_status",
+      "id": "mission_list",
+      "ui": {
+        "type": "blank",
+        "title": "Mission List Screen",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "mission_detail",
       "ui": {
         "type": "detail",
-        "title": "Rendelés állapota",
+        "title": "Mission Detail Screen",
         "layout": "single-column",
         "components": [
           {
@@ -60,51 +83,102 @@
       }
     },
     {
-      "id": "error_page",
+      "id": "mission_progress",
       "ui": {
         "type": "blank",
-        "title": "Hiba oldal",
+        "title": "Mission Progress Screen",
         "layout": "single-column"
       }
     },
     {
-      "id": "admin_upload",
+      "id": "mission_completion",
       "ui": {
         "type": "blank",
-        "title": "Admin Excel feltöltés",
+        "title": "Mission Completion Screen",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "quiz_selection",
+      "ui": {
+        "type": "blank",
+        "title": "Quiz Selection Screen",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "quiz_intro",
+      "ui": {
+        "type": "blank",
+        "title": "Quiz Intro Screen",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "quiz_question",
+      "ui": {
+        "type": "blank",
+        "title": "Question Screen",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "quiz_completion",
+      "ui": {
+        "type": "blank",
+        "title": "Quiz Completion Screen",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "rewards_catalog",
+      "ui": {
+        "type": "blank",
+        "title": "Rewards Catalog",
         "layout": "single-column"
       }
     }
   ],
   "routes": [
     {
-      "from": "home",
-      "to": "search_order",
-      "when": "rendelési szám beírása és keresés gomb"
+      "from": "widget",
+      "to": "onboarding_learn",
+      "when": "widget tapped"
     },
     {
-      "from": "search_order",
-      "to": "order_found"
+      "from": "onboarding_learn",
+      "to": "onboarding_earn",
+      "when": "next"
     },
     {
-      "from": "order_found",
-      "to": "order_status",
-      "when": "rendelés megtalálva"
+      "from": "onboarding_earn",
+      "to": "onboarding_redeem",
+      "when": "next"
     },
     {
-      "from": "order_found",
-      "to": "error_page",
-      "when": "rendelés nem található"
+      "from": "onboarding_redeem",
+      "to": "sso_link",
+      "when": "get started"
     },
     {
-      "from": "error_page",
-      "to": "home",
-      "when": "vissza gomb"
+      "from": "sso_link",
+      "to": "dashboard",
+      "when": "profile linked"
     },
     {
-      "from": "order_status",
-      "to": "home",
-      "when": "új keresés gomb"
+      "from": "dashboard",
+      "to": "activity_choice",
+      "when": "user selects activity"
+    },
+    {
+      "from": "activity_choice",
+      "to": "mission_list",
+      "when": "missions selected"
+    },
+    {
+      "from": "activity_choice",
+      "to": "quiz_selection",
+      "when": "quizzes selected"
     }
   ]
 }

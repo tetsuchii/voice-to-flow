@@ -1,89 +1,257 @@
 {
-  "start": "home",
+  "start": "widget",
   "nodes": [
     {
-      "id": "home",
+      "id": "widget",
       "kind": "page",
-      "title": "Főoldal",
+      "title": "Enlight Widget in Banking App",
       "data": {
-        "description": "Nyomda weboldal főoldala rendelési szám keresővel"
-      }
-    },
-    {
-      "id": "search_order",
-      "kind": "action",
-      "title": "Rendelés keresése",
-      "data": {
-        "description": "Rendelési szám validálása és keresése az adatbázisban"
-      }
-    },
-    {
-      "id": "order_found",
-      "kind": "decision",
-      "title": "Rendelés találat",
-      "data": {
-        "description": "Eldönti, hogy a rendelési szám létezik-e"
-      }
-    },
-    {
-      "id": "order_status",
-      "kind": "page",
-      "title": "Rendelés állapota",
-      "data": {
-        "description": "Megjeleníti a rendelés aktuális állapotát (gyártás alatt, átvehető, kiszállítva)",
-        "statuses": [
-          "gyártás alatt",
-          "átvehető",
-          "kiszállítva"
+        "description": "Card on home dashboard with Enlight branding adapted to bank colors",
+        "triggers": [
+          "checking balances",
+          "finishing transaction",
+          "exploring savings"
         ]
       }
     },
     {
-      "id": "error_page",
+      "id": "onboarding_learn",
       "kind": "page",
-      "title": "Hiba oldal",
+      "title": "Onboarding - Learn",
       "data": {
-        "description": "Hibaüzenet megjelenítése, ha a rendelési szám nem található"
+        "message": "Enhance your financial skills",
+        "illustration": true,
+        "cta": "Get Started"
       }
     },
     {
-      "id": "admin_upload",
+      "id": "onboarding_earn",
       "kind": "page",
-      "title": "Admin Excel feltöltés",
+      "title": "Onboarding - Earn",
       "data": {
-        "description": "Személyzet által használható oldal Excel fájl feltöltésére"
+        "message": "Complete challenges to gain points",
+        "illustration": true,
+        "cta": "Get Started"
+      }
+    },
+    {
+      "id": "onboarding_redeem",
+      "kind": "page",
+      "title": "Onboarding - Redeem",
+      "data": {
+        "message": "Exchange points for rewards",
+        "illustration": true,
+        "cta": "Get Started"
+      }
+    },
+    {
+      "id": "sso_link",
+      "kind": "action",
+      "title": "Link User Profile via SSO",
+      "data": {
+        "description": "Securely tie Enlight profile to banking identity"
+      }
+    },
+    {
+      "id": "dashboard",
+      "kind": "page",
+      "title": "Enlight Dashboard",
+      "data": {
+        "components": [
+          "points balance",
+          "progress tracker",
+          "missions tab",
+          "quizzes tab",
+          "rewards tab"
+        ],
+        "personalization": true
+      }
+    },
+    {
+      "id": "activity_choice",
+      "kind": "decision",
+      "title": "Choose Activity Type"
+    },
+    {
+      "id": "mission_list",
+      "kind": "page",
+      "title": "Mission List Screen",
+      "data": {
+        "filters": [
+          "Active",
+          "Completed",
+          "Upcoming"
+        ],
+        "components": [
+          "titles",
+          "progress bars",
+          "rewards"
+        ]
+      }
+    },
+    {
+      "id": "mission_detail",
+      "kind": "page",
+      "title": "Mission Detail Screen",
+      "data": {
+        "components": [
+          "description",
+          "steps",
+          "deadline",
+          "points reward",
+          "FAQ"
+        ],
+        "cta": "Start Mission"
+      }
+    },
+    {
+      "id": "mission_progress",
+      "kind": "page",
+      "title": "Mission Progress Screen",
+      "data": {
+        "components": [
+          "live tracker",
+          "visual animations",
+          "banking flow links"
+        ],
+        "feedback": "progress updates"
+      }
+    },
+    {
+      "id": "mission_completion",
+      "kind": "page",
+      "title": "Mission Completion Screen",
+      "data": {
+        "components": [
+          "celebration animation",
+          "badge unlocked",
+          "points confirmation"
+        ],
+        "cta": "Go to Rewards"
+      }
+    },
+    {
+      "id": "quiz_selection",
+      "kind": "page",
+      "title": "Quiz Selection Screen",
+      "data": {
+        "themes": [
+          "Budgeting Basics",
+          "Travel Safety",
+          "Credit Cards 101"
+        ],
+        "components": [
+          "difficulty",
+          "time estimate",
+          "reward points"
+        ]
+      }
+    },
+    {
+      "id": "quiz_intro",
+      "kind": "page",
+      "title": "Quiz Intro Screen",
+      "data": {
+        "components": [
+          "title",
+          "description",
+          "learning outcome",
+          "reward points"
+        ],
+        "cta": "Start Quiz"
+      }
+    },
+    {
+      "id": "quiz_question",
+      "kind": "page",
+      "title": "Question Screen",
+      "data": {
+        "components": [
+          "scenario",
+          "multiple choice",
+          "immediate feedback",
+          "progress indicator"
+        ],
+        "features": [
+          "exit and resume"
+        ]
+      }
+    },
+    {
+      "id": "quiz_completion",
+      "kind": "page",
+      "title": "Quiz Completion Screen",
+      "data": {
+        "components": [
+          "final score",
+          "points earned",
+          "knowledge recap",
+          "celebration animation"
+        ],
+        "ctas": [
+          "Retry for bonus points",
+          "Go to Rewards"
+        ]
+      }
+    },
+    {
+      "id": "rewards_catalog",
+      "kind": "page",
+      "title": "Rewards Catalog",
+      "data": {
+        "categories": [
+          "financial perks",
+          "lifestyle",
+          "charitable"
+        ],
+        "components": [
+          "filters",
+          "point costs",
+          "redeem buttons"
+        ]
       }
     }
   ],
   "edges": [
     {
-      "from": "home",
-      "to": "search_order",
-      "when": "rendelési szám beírása és keresés gomb"
+      "from": "widget",
+      "to": "onboarding_learn",
+      "when": "widget tapped"
     },
     {
-      "from": "search_order",
-      "to": "order_found"
+      "from": "onboarding_learn",
+      "to": "onboarding_earn",
+      "when": "next"
     },
     {
-      "from": "order_found",
-      "to": "order_status",
-      "when": "rendelés megtalálva"
+      "from": "onboarding_earn",
+      "to": "onboarding_redeem",
+      "when": "next"
     },
     {
-      "from": "order_found",
-      "to": "error_page",
-      "when": "rendelés nem található"
+      "from": "onboarding_redeem",
+      "to": "sso_link",
+      "when": "get started"
     },
     {
-      "from": "error_page",
-      "to": "home",
-      "when": "vissza gomb"
+      "from": "sso_link",
+      "to": "dashboard",
+      "when": "profile linked"
     },
     {
-      "from": "order_status",
-      "to": "home",
-      "when": "új keresés gomb"
+      "from": "dashboard",
+      "to": "activity_choice",
+      "when": "user selects activity"
+    },
+    {
+      "from": "activity_choice",
+      "to": "mission_list",
+      "when": "missions selected"
+    },
+    {
+      "from": "activity_choice",
+      "to": "quiz_selection",
+      "when": "quizzes selected"
     }
   ]
 }

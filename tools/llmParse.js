@@ -4,6 +4,7 @@ import path from "path";
 import Anthropic from "@anthropic-ai/sdk";
 import { z } from "zod";
 import "dotenv/config";
+import { jsonrepair } from "jsonrepair";
 
 // ---------- 1️⃣ Zod schema for validation ----------
 const nodeSchema = z.object({
@@ -27,7 +28,7 @@ const flowSchema = z.object({
 
 // ---------- 2️⃣ Paths ----------
 const root = process.cwd(); // project root
-const transcriptPath = path.join(root, "data", "transcript.txt");
+const transcriptPath = path.join(root, "data", "message.txt");
 const flowPath = path.join(root, "data", "flow.json");
 
 // ---------- 3️⃣ Check transcript ----------
@@ -174,9 +175,16 @@ async function main() {
     try {
       flow = JSON.parse(extractedJson);
     } catch (err) {
-      console.error("Failed to parse JSON from LLM output:", err);
-      console.error("Attempted to parse:", extractedJson);
-      process.exit(1);
+      console.warn("⚠️ JSON.parse failed, trying jsonrepair...");
+      try {
+        const repaired = jsonrepair(extractedJson);
+        flow = JSON.parse(repaired);
+        console.log("🛠️ JSON successfully repaired with jsonrepair");
+      } catch (repairErr) {
+        console.error("❌ Failed to repair JSON with jsonrepair:", repairErr);
+        console.error("Original invalid JSON:\n", extractedJson);
+        process.exit(1);
+      }
     }
 
     // ---------- 10️⃣ Validate with Zod ----------

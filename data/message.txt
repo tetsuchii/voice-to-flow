@@ -1,0 +1,203 @@
+Enlight Full Product Workshop
+
+Participants:
+
+Benjamin (Product Designer)
+
+Anna (Product Manager)
+
+Mark (Tech Lead)
+
+Sophie (UX Researcher)
+
+David (Bank Partner Representative)
+
+1. Introduction
+
+Anna (PM): Thanks for joining, everyone. Today we’re going to go end-to-end on Enlight — the Learn & Earn solution we’re embedding into the bank’s app. We’ll walk through the widget, onboarding, dashboard, activity types, and the points + rewards system. Then, we’ll dive deeper into how missions and quizzes actually work — the flows, the required screens, and the user journey.
+
+David (Bank Rep): Perfect. What I’d like by the end is a clear picture of what users will actually see and do, so I can present this internally.
+
+2. Widget & Onboarding
+
+Benjamin (Designer): Enlight starts with a widget inside the banking app. Think of it as a card on the home dashboard: “Boost your knowledge, earn rewards.” It uses Enlight’s visual identity — light, brightness — but adapted to the bank’s colors so it feels native.
+
+Sophie (UX Researcher): Context is important. The widget could appear after certain triggers: checking balances, finishing a transaction, or even when users explore savings. That makes it feel relevant, not intrusive.
+
+David (Bank Rep): Exactly, it should never look like an external add-on.
+
+Anna (PM): Once tapped, the widget takes users into the Enlight onboarding flow. Three lightweight screens:
+
+Learn: “Enhance your financial skills.”
+
+Earn: “Complete challenges to gain points.”
+
+Redeem: “Exchange points for rewards.”
+
+Each screen has illustrations and a clear CTA: “Get Started.”
+
+Mark (Tech Lead): Technically, onboarding is simple. We’ll link the user’s Enlight profile via the bank’s SSO. That way, progress and points are tied securely to their banking identity.
+
+3. Dashboard Overview
+
+Benjamin (Designer): After onboarding, users land on the Enlight Dashboard, the hub of the experience. It includes:
+
+Points balance at the top.
+
+Progress tracker — e.g., “40% towards your next reward.”
+
+Tabs or cards for Missions and Quizzes.
+
+A “Rewards” tab where they can browse items.
+
+Sophie (UX Researcher): Personalization is key. If someone just got their first credit card, the dashboard should surface a quiz like “How to use credit responsibly.”
+
+David (Bank Rep): That makes the experience contextual and useful, not generic gamification.
+
+4. Missions – Concept and Flow
+
+Anna (PM): Let’s go deep into missions. These are real-world banking actions users must take to earn points.
+
+Benjamin (Designer): I see missions as a 4-screen flow:
+
+Mission List Screen:
+
+Shows all available missions with titles, progress bars, and rewards.
+
+Filter by Active, Completed, Upcoming.
+
+Mission Detail Screen:
+
+Full description, steps required, deadline, and points reward.
+
+CTA: “Start Mission.”
+
+Mission Progress Screen:
+
+Live tracker: “1/3 deposits complete.”
+
+Visual animations as progress grows.
+
+Links back to the relevant banking flow (e.g., “Go to Bill Payments”).
+
+Mission Completion Screen:
+
+Celebration animation.
+
+Badge unlocked (e.g., “Savings Explorer”).
+
+Confirmation: “Mission Complete! You earned 150 points.”
+
+Button: “Go to Rewards.”
+
+Sophie (UX Researcher): Feedback at every step matters. Even partial progress should feel rewarding. “Nice! 2 deposits down, 1 to go.”
+
+Mark (Tech Lead): Missions rely on event tracking from the bank’s system. We’ll need APIs to detect when the user completes a qualifying action.
+
+David (Bank Rep): That’s powerful for us. It drives product adoption — more savings, more digital bill payments. But yes, clarity is essential: users must know exactly which actions count.
+
+Benjamin (Designer): That’s why the detail screen has a “How this works” FAQ. No ambiguity.
+
+5. Quizzes – Concept and Flow
+
+Anna (PM): Now, quizzes. These are scenario-based learning experiences.
+
+Benjamin (Designer): The 5-screen quiz journey looks like this:
+
+Quiz Selection Screen:
+
+Library of quizzes with themes: “Budgeting Basics,” “Travel Safety,” “Credit Cards 101.”
+
+Cards show difficulty, estimated time, reward points.
+
+Quiz Intro Screen:
+
+Title, description, and learning outcome.
+
+Reward points highlighted.
+
+CTA: “Start Quiz.”
+
+Question Screen (repeated):
+
+Scenario at top.
+
+Multiple-choice answers.
+
+Feedback immediately after submission: correct answer glows, wrong answer dims with explanation.
+
+Progress Screen:
+
+Quick indicator: “Question 2 of 5.”
+
+Option to exit and resume later.
+
+Quiz Completion Screen:
+
+Final score, points earned.
+
+Knowledge recap (“You learned: Credit cards abroad may charge hidden fees”).
+
+Enlight animation — glowing light or rays.
+
+CTAs: “Retry for bonus points” or “Go to Rewards.”
+
+Sophie (UX Researcher): Retakes are important. If someone only gets 2/5, they should still earn partial points, but full points unlock if they retry and ace it. That’s positive reinforcement.
+
+Mark (Tech Lead): From backend perspective, we’ll track completion, attempts, and scoring. The quiz engine lives in Enlight’s system, embedded into the bank app.
+
+David (Bank Rep): Could we tier quizzes? Beginner, intermediate, expert?
+
+Anna (PM): Absolutely. That keeps advanced users engaged and allows progression.
+
+6. Points, Progression, and Rewards
+
+Anna (PM): Let’s revisit the points system.
+
+Benjamin (Designer): Points are the core currency. Users always see their balance. To keep motivation high, we’ll add milestones and tiers — e.g., Tier 1 unlocks at 500 points, Tier 2 at 1,000.
+
+Sophie (UX Researcher): Badges and identity matter too. Titles like “Quiz Master,” “Savings Starter.” They give status beyond rewards.
+
+David (Bank Rep): And rewards?
+
+Anna (PM): Three categories:
+
+Financial perks: cashback, fee waivers, savings bonuses.
+
+Lifestyle: gift cards, partner discounts, cinema tickets.
+
+Charitable: donate points to causes.
+
+Mark (Tech Lead): Rewards will need a catalog API. Some items fulfilled by the bank, others by third parties.
+
+Benjamin (Designer): The catalog will look like a shop: filters, categories, each reward card showing points cost + redeem button.
+
+7. Retention & Engagement
+
+David (Bank Rep): One concern: how do we keep users coming back, not just once?
+
+Sophie (UX Researcher): Regular nudges: “You’re only 50 points away from your next reward.” Or notifications about new missions.
+
+Benjamin (Designer): Visual freshness matters too — seasonal quiz packs, limited-time rewards, themed missions.
+
+Mark (Tech Lead): Notifications must be subtle, opt-in. Banks don’t want to overwhelm users.
+
+Anna (PM): Agreed. The tone must be helpful, not pushy.
+
+8. Wrap-Up
+
+Anna (PM): To summarize the Enlight flow:
+
+Widget → Onboarding → Dashboard.
+
+Two activity types: Missions (real banking actions) and Quizzes (scenario learning).
+
+Each has defined screens and flows with feedback and progression.
+
+Points + tiers + badges motivate.
+
+Rewards catalog provides tangible incentives.
+
+Retention strategies keep engagement alive.
+
+David (Bank Rep): This paints a full picture. With this, I can already pitch it internally as a structured, engaging, and bank-friendly learning solution.
