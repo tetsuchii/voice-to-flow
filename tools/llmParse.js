@@ -187,14 +187,14 @@ async function main() {
       }
     }
 
-    // ---------- 10️⃣ Validate with Zod ----------
+    // ---------- 1️⃣0️⃣ Validate with Zod ----------
     const parsed = flowSchema.parse(flow);
 
-    // ---------- 11️⃣ Write to flow.json ----------
+    // ---------- 1️⃣1️⃣ Write to flow.json ----------
     fs.writeFileSync(flowPath, JSON.stringify(parsed, null, 2), "utf8");
     console.log("✅ flow.json written:", flowPath);
 
-    // ---------- 12️⃣ Show summary ----------
+    // ---------- 1️⃣2️⃣ Show summary ----------
     console.log(`\n📊 Flow Summary:`);
     console.log(`- Start node: ${parsed.start}`);
     console.log(`- Total nodes: ${parsed.nodes.length}`);

@@ -28,9 +28,6 @@ Ez azt jelenti, hogy kell egy keresőmező, valamilyen adatbázis háttérrel. S
 [Balázs – Nyomda tulajdonos]
 Elég a rendelési szám. Az ügyfeleim nem szeretnének regisztrálni.
 
-[Anna – Marketing menedzser]
-És az arculat? Fontos, hogy az oldal a nyomda színeit és logóját használja.
-
 [Eszter – UX designer]
 Oké, tehát a kulcspontok:  
 1. Ügyfél beírja a rendelési számot → látja az állapotot.  

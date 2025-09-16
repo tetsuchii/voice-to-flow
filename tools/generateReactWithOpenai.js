@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import OpenAI from "openai";
+import { execSync } from "child_process";
 import "dotenv/config";
 
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY2 });
@@ -8,37 +9,63 @@ const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY2 });
 // ---------- 1️⃣ Paths ----------
 const appDir = path.resolve("./src");
 const specPath = path.resolve("./data/uiSpec.json");
+const promptPath = path.resolve("./data/openaiRequirements.txt");
 
-// ---------- 2️⃣ Check JSON ----------
+// ---------- 2️⃣ Dependencies you expect ----------
+const REQUIRED_DEPS = [
+  "react",
+  "react-dom",
+  "react-router-dom",
+  "@mui/material",
+  "@mui/icons-material",
+];
+
+// Helper: check & install
+function checkAndInstallDependencies() {
+  console.log("🔍 Checking required dependencies...");
+
+  const missing = REQUIRED_DEPS.filter((dep) => {
+    try {
+      require.resolve(dep);
+      return false;
+    } catch {
+      return true;
+    }
+  });
+
+  if (missing.length === 0) {
+    console.log("✅ All dependencies already installed.");
+    return;
+  }
+
+  console.log(`📦 Missing: ${missing.join(", ")}`);
+  console.log("⬇️  Installing...");
+
+  try {
+    execSync(`npm install ${missing.join(" ")}`, { stdio: "inherit" });
+    console.log("✅ Dependencies installed.");
+  } catch (err) {
+    console.error("❌ Failed to install dependencies:", err);
+    process.exit(1);
+  }
+}
+
+// ---------- 3️⃣ Check JSON ----------
 if (!fs.existsSync(specPath)) {
   console.error("❌ uiSpec.json not found at:", specPath);
   process.exit(1);
 }
 const spec = JSON.parse(fs.readFileSync(specPath, "utf8"));
 
-// ---------- 3️⃣ Prompt OpenAI ----------
-const systemPrompt = `
-You are a professional React developer.
-Generate a full React app based on this flow JSON:
-${JSON.stringify(spec)}
-
-Requirements:
-- React 18, React Router, Material UI
-- main.jsx with routing
-- Each page as a separate component (inside src/pages/)
-- Add placeholder text, images, cards, lists, dashboards where appropriate
-- Make it visually appealing and realistic
-- Ready to run in Vite or CRA
-- Return ONLY code blocks in this format:
-  ### \`relative/path/to/file.jsx\`
-  \`\`\`jsx
-  // file content
-  \`\`\`
-- Do not include explanations or prose outside the code blocks.
-`;
+// ---------- 4️⃣ Prompt OpenAI ----------
+let systemPrompt = fs.readFileSync(promptPath, "utf8");
+systemPrompt = systemPrompt.replace("{{SPEC_JSON}}", JSON.stringify(spec));
 
 async function generateReactWithOpenAI() {
   try {
+    // Check dependencies first
+    checkAndInstallDependencies();
+
     console.log("🤖 Sending prompt to OpenAI...");
 
     const response = await client.chat.completions.create({
@@ -52,7 +79,7 @@ async function generateReactWithOpenAI() {
 
     const rawCode = response.choices[0].message.content;
 
-    // ---------- 4️⃣ Split and save files ----------
+    // ---------- 5️⃣ Split and save files ----------
     splitAndSaveFiles(rawCode, appDir);
 
     console.log("✅ React app generated in:", appDir);
@@ -62,11 +89,6 @@ async function generateReactWithOpenAI() {
 }
 
 function splitAndSaveFiles(rawContent, baseDir) {
-  // Regex to capture blocks like:
-  // ### `pages/Home.jsx`
-  // ```jsx
-  // ...code...
-  // ```
   const fileRegex = /### `([^`]+)`\n```[a-z]*\n([\s\S]*?)```/g;
   let match;
   let fileCount = 0;
@@ -87,7 +109,6 @@ function splitAndSaveFiles(rawContent, baseDir) {
     console.warn(
       "⚠️ No files were detected in the output. Check model formatting."
     );
-    // Optionally: save whole raw output for debugging
     fs.writeFileSync(path.join(baseDir, "GeneratedReact_raw.txt"), rawContent);
   }
 }

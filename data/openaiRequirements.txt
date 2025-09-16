@@ -1,0 +1,15 @@
+PROJECT_NAME: MyAwesomeDashboard
+---
+You are a professional React developer.
+Generate a full React app based on this flow JSON: {{SPEC_JSON}}
+
+Requirements:
+- React 18, React Router, Material UI
+- main.jsx with routing
+- Each page as a separate component (inside src/pages/)
+- Add placeholder text, images, cards, lists, dashboards where appropriate
+- Make it visually appealing and realistic
+- Ready to run in Vite or CRA
+- Return ONLY code blocks in this format:
+  ### `relative/path/to/file.jsx`
+  ```jsx
