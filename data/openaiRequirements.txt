@@ -10,6 +10,746 @@ Requirements:
 - Add placeholder text, images, cards, lists, dashboards where appropriate
 - Make it visually appealing and realistic
 - Ready to run in Vite or CRA
+- Generate **all** pages listed in the spec JSON.
+- Each page must be a separate component with the exact filename from the spec.
+- Update main.jsx to import and route to all pages.
 - Return ONLY code blocks in this format:
   ### `relative/path/to/file.jsx`
   ```jsx
+
+Make sure to use these rules:
+# **Comprehensive Digital UI Components & UX Guidelines**
+
+## **1. Navigation & Structure**
+
+### **Navigation Bars / Menus**
+
+- **Purpose / Use:** Primary navigation; guides users through the main sections of an app or website.
+- **Best Practices:**
+    - Keep visible on all pages (sticky or fixed).
+    - Prioritize top-level content, use clear, concise labels.
+    - Include visual feedback for active states.
+- **Subcomponents:**
+    - Logo / Branding
+    - Menu Items (text + icon optional)
+    - Dropdowns / Flyout menus
+    - Search field / Icon
+    - User Profile Menu / Avatar
+- **UX Examples:** Google Docs top bar, Slack sidebar.
+
+### **Breadcrumbs**
+
+- **Purpose / Use:** Shows location in hierarchy; improves findability.
+- **Best Practices:**
+    - Only for multi-level content (>2 levels).
+    - Clickable links; current page not clickable.
+    - Use “>” or “/” separators.
+- **Subcomponents:**
+    - Home link
+    - Intermediate page links
+    - Current page indicator
+- **UX Examples:** Amazon product categories, Medium article hierarchy.
+
+### **Tabs / Tab Bars**
+
+- **Purpose / Use:** Switch between related views or content categories.
+- **Best Practices:**
+    - 3–7 tabs max.
+    - Highlight active tab visually (underline, color, bold).
+    - Keep order consistent across pages.
+- **Subcomponents:**
+    - Tab label
+    - Tab icon (optional)
+    - Tab indicator / underline
+- **UX Examples:** Spotify bottom navigation, Gmail inbox tabs.
+
+### **Pagination**
+
+- **Purpose / Use:** Split large datasets into manageable pages.
+- **Best Practices:**
+    - Show next/previous & numeric pages.
+    - Indicate active page.
+    - Consider infinite scroll for certain apps (feeds).
+- **Subcomponents:**
+    - Page numbers
+    - Prev/Next buttons
+    - Jump-to-page input
+- **UX Examples:** Google search results, Amazon product listings.
+
+### **Side Drawers / Hamburger Menus**
+
+- **Purpose / Use:** Hide secondary navigation to save space.
+- **Best Practices:**
+    - Only secondary or infrequent actions.
+    - Include labels with icons.
+    - Animate open/close for context.
+- **Subcomponents:**
+    - Menu items
+    - Submenu groups
+    - Profile section
+    - Logout / Settings links
+- **UX Examples:** Gmail mobile app, Medium mobile menu.
+
+### **Search Bars / Filters**
+
+- **Purpose / Use:** Quickly find content or refine results.
+- **Best Practices:**
+    - Place prominently at top.
+    - Offer autocomplete and suggestions.
+    - Filter applied state visible.
+- **Subcomponents:**
+    - Input field
+    - Clear button
+    - Filter dropdowns
+    - Search icon / submit button
+- **UX Examples:** Airbnb search + filters, Spotify search.
+
+---
+
+## **2. Forms & Inputs**
+
+### **Text Inputs / Text Fields**
+
+- **Purpose / Use:** Capture user text input.
+- **Best Practices:**
+    - Always include a label + placeholder.
+    - Inline validation; prevent input errors.
+    - Support autocomplete, especially for email/addresses.
+- **Subcomponents:**
+    - Label
+    - Input field
+    - Placeholder
+    - Helper text / error message
+    - Clear or action icon
+- **UX Examples:** Stripe checkout, LinkedIn profile forms.
+
+### **Text Areas**
+
+- **Purpose / Use:** Multi-line text input for comments, descriptions.
+- **Best Practices:**
+    - Indicate max characters.
+    - Allow resizing.
+    - Provide hint text for formatting guidance.
+- **Subcomponents:**
+    - Label
+    - Multi-line input field
+    - Character counter
+    - Error / validation message
+- **UX Examples:** Twitter reply box, GitHub issue description.
+
+### **Dropdowns / Select Menus**
+
+- **Purpose / Use:** Choose one option from a list.
+- **Best Practices:**
+    - Limit options for better usability.
+    - Default selection optional.
+    - Support search for long lists.
+- **Subcomponents:**
+    - Trigger / label
+    - Option list
+    - Scrollbar / pagination (for long lists)
+    - Icons (optional)
+- **UX Examples:** Shopify product variant selector, Google Forms dropdown.
+
+### **Checkboxes**
+
+- **Purpose / Use:** Allow multiple selections.
+- **Best Practices:**
+    - Group related items.
+    - Ensure label is clickable.
+    - Provide “Select all” option if multiple choices.
+- **Subcomponents:**
+    - Checkbox box
+    - Label
+    - Helper text
+- **UX Examples:** Gmail multi-select labels, Trello task labels.
+
+### **Radio Buttons**
+
+- **Purpose / Use:** Select a single option from a group.
+- **Best Practices:**
+    - Show all options at once.
+    - Clearly differentiate choices.
+    - Avoid long lists.
+- **Subcomponents:**
+    - Radio circle
+    - Label
+- **UX Examples:** SurveyMonkey questions, Spotify plan selection.
+
+### **Toggle Switches**
+
+- **Purpose / Use:** Binary on/off settings.
+- **Best Practices:**
+    - Use for immediate action, not navigation.
+    - Label ON/OFF clearly.
+    - Maintain state persistence.
+- **Subcomponents:**
+    - Track
+    - Thumb
+    - Label
+- **UX Examples:** iOS settings toggles, Slack notification preferences.
+
+### **Date & Time Pickers**
+
+- **Purpose / Use:** Select date/time without typing errors.
+- **Best Practices:**
+    - Include calendar for date.
+    - Support manual input.
+    - Validate input format.
+- **Subcomponents:**
+    - Input field
+    - Calendar popup / dropdown
+    - Time selector
+    - Clear / today button
+- **UX Examples:** Google Calendar, Booking.com date selector.
+
+### **File Upload / Drag & Drop**
+
+- **Purpose / Use:** Allow users to upload files easily.
+- **Best Practices:**
+    - Accept only valid formats.
+    - Show progress and error messages.
+    - Allow multiple files when applicable.
+- **Subcomponents:**
+    - Drag area / upload button
+    - File preview
+    - Progress bar
+    - Remove/delete button
+- **UX Examples:** Gmail attachment, Notion file uploads.
+
+### **Sliders / Range Inputs**
+
+- **Purpose / Use:** Select a value from a range.
+- **Best Practices:**
+    - Show min/max labels.
+    - Display current value.
+    - Use large enough handle for touch devices.
+- **Subcomponents:**
+    - Track
+    - Thumb / handle
+    - Labels (min, max, current)
+- **UX Examples:** YouTube volume control, Google Ads bid range.
+
+### **Autocomplete / Suggestions**
+
+- **Purpose / Use:** Speed up typing and reduce errors.
+- **Best Practices:**
+    - Provide relevant suggestions.
+    - Highlight matches.
+    - Allow free input if needed.
+- **Subcomponents:**
+    - Input field
+    - Suggestion list
+    - Highlighted matches
+- **UX Examples:** Gmail autocomplete, Google search suggestions.
+
+### **Form Validation / Error Messages**
+
+- **Purpose / Use:** Guide users to correct input errors.
+- **Best Practices:**
+    - Show inline errors next to input.
+    - Use clear, actionable messages.
+    - Avoid generic messages like “Invalid input.”
+- **Subcomponents:**
+    - Error icon
+    - Text message
+    - Optional tooltip or helper text
+- **UX Examples:** Stripe checkout, LinkedIn profile forms.
+
+---
+
+## **3. Content Display**
+
+### **Cards / Panels**
+
+- **Purpose / Use:** Group related content (images, text, actions).
+- **Best Practices:**
+    - Clickable if actionable.
+    - Maintain consistent spacing and shadow.
+    - Use hierarchy (title, subtitle, content, actions).
+- **Subcomponents:**
+    - Image / icon
+    - Title / heading
+    - Description / text
+    - Action buttons
+    - Tags / badges
+- **UX Examples:** Pinterest pins, Google News cards.
+
+### **Lists**
+
+- **Purpose / Use:** Present multiple items clearly.
+- **Best Practices:**
+    - Maintain alignment and spacing.
+    - Use icons or avatars for recognition.
+    - Consider sortable or filterable lists.
+- **Subcomponents:**
+    - List item
+    - Icon / avatar
+    - Primary/secondary text
+    - Action button (optional)
+- **UX Examples:** Gmail inbox, LinkedIn connections list.
+
+### **Tables / Grids**
+
+- **Purpose / Use:** Display structured data efficiently.
+- **Best Practices:**
+    - Use clear headers.
+    - Allow sorting, filtering, pagination.
+    - Maintain readability on small screens.
+- **Subcomponents:**
+    - Header row
+    - Data cells
+    - Sort icons / filter controls
+    - Pagination controls
+- **UX Examples:** Airtable, Google Sheets.
+
+### **Accordions / Expandable Sections**
+
+- **Purpose / Use:** Hide non-essential info until needed.
+- **Best Practices:**
+    - Collapsed by default.
+    - Animate expansion.
+    - Provide clear affordance for interaction.
+- **Subcomponents:**
+    - Trigger (title + icon)
+    - Content panel
+- **UX Examples:** FAQ pages, Gmail email threads.
+
+### **Modals / Popups**
+
+- **Purpose / Use:** Focus on single task or alert.
+- **Best Practices:**
+    - Limit use; avoid nesting.
+    - Include clear close action.
+    - Dim background for focus.
+- **Subcomponents:**
+    - Header / title
+    - Body / content
+    - Footer / actions
+    - Close button / overlay
+- **UX Examples:** Dropbox file confirmation, Medium login modal.
+
+### **Tooltips / Hints**
+
+- **Purpose / Use:** Provide extra info without clutter.
+- **Best Practices:**
+    - Short, readable text.
+    - Trigger on hover or focus.
+    - Avoid overuse.
+- **Subcomponents:**
+    - Trigger element
+    - Tooltip container
+- **UX Examples:** Figma hover hints, Gmail icon tooltips.
+
+### **Chips / Tags / Badges**
+
+- **Purpose / Use:** Categorize content, show status.
+- **Best Practices:**
+    - Keep short.
+    - Allow removal if interactive.
+    - Maintain consistent style.
+- **Subcomponents:**
+    - Text label
+    - Optional icon
+    - Remove button
+- **UX Examples:** Gmail labels, Trello tags.
+
+### **Avatars / Profile Pictures**
+
+- **Purpose / Use:** Represent users visually.
+- **Best Practices:**
+    - Keep uniform size.
+    - Provide alt text.
+    - Clickable for profile actions.
+- **Subcomponents:**
+    - Image
+    - Status indicator (optional)
+- **UX Examples:** Slack, LinkedIn.
+
+### **Progress Bars / Loaders**
+
+- **Purpose / Use:** Communicate progress or system activity.
+- **Best Practices:**
+    - Indicate percentage or time.
+    - Animate for perception of speed.
+    - Avoid misleading users.
+- **Subcomponents:**
+    - Track
+    - Fill
+    - Label / percentage
+- **UX Examples:** YouTube video buffering, Stripe checkout.
+
+## **4. Actions & Controls**
+
+### **Buttons**
+
+- **Purpose / Use:** Trigger actions like submitting forms, navigating, or performing tasks.
+- **Best Practices:**
+    - Distinguish primary vs secondary vs tertiary actions using color, size, or style.
+    - Label clearly with action verbs (“Submit,” “Save,” “Delete”).
+    - Ensure touch-friendly size (44–48px minimum).
+- **Subcomponents:**
+    - Button container / background
+    - Label text
+    - Icon (optional)
+    - Hover / active / disabled states
+- **UX Examples:** Stripe checkout buttons, Gmail “Compose” button.
+
+### **Context Menus / Dropdown Actions**
+
+- **Purpose / Use:** Show secondary actions related to a selected item.
+- **Best Practices:**
+    - Show relevant options only.
+    - Highlight active/hovered items.
+    - Close menu on outside click or Esc.
+- **Subcomponents:**
+    - Trigger button / icon
+    - Menu list
+    - Menu items (text + icon optional)
+- **UX Examples:** Google Docs right-click menu, Trello card menu.
+
+### **Sort & Filter Controls**
+
+- **Purpose / Use:** Allow users to organize or narrow down data.
+- **Best Practices:**
+    - Provide clear default sorting.
+    - Show applied filters.
+    - Include reset or clear options.
+- **Subcomponents:**
+    - Sort dropdown or toggle
+    - Filter checkboxes, toggles, or sliders
+    - Apply / Clear buttons
+- **UX Examples:** Airbnb search filters, Amazon product filters.
+
+### **Drag & Drop Handles**
+
+- **Purpose / Use:** Enable reordering or moving items.
+- **Best Practices:**
+    - Show visual affordance (icon or grip).
+    - Provide live feedback during dragging.
+    - Support keyboard accessibility.
+- **Subcomponents:**
+    - Drag handle
+    - Draggable item container
+    - Placeholder / drop indicator
+- **UX Examples:** Trello board cards, Notion blocks.
+
+### **Undo / Redo / History**
+
+- **Purpose / Use:** Allow users to revert or redo actions.
+- **Best Practices:**
+    - Visible only when applicable.
+    - Confirm destructive actions optionally.
+    - Maintain clear history labeling.
+- **Subcomponents:**
+    - Undo button
+    - Redo button
+    - Optional history panel
+- **UX Examples:** Google Docs version history, Figma undo/redo.
+
+---
+
+## **5. Media & Interactive Elements**
+
+### **Images / Galleries / Carousels**
+
+- **Purpose / Use:** Display visual content attractively.
+- **Best Practices:**
+    - Use high-res images; lazy load for performance.
+    - Provide alt text for accessibility.
+    - Avoid auto-scroll carousels; allow manual navigation.
+- **Subcomponents:**
+    - Image container
+    - Navigation arrows / dots
+    - Captions (optional)
+- **UX Examples:** Pinterest, Airbnb gallery.
+
+### **Video & Audio Players**
+
+- **Purpose / Use:** Playback multimedia content.
+- **Best Practices:**
+    - Include controls (play, pause, volume, progress).
+    - Support captions/subtitles.
+    - Avoid autoplay with sound.
+- **Subcomponents:**
+    - Play/pause button
+    - Progress bar
+    - Volume control
+    - Fullscreen / settings menu
+- **UX Examples:** YouTube, Spotify.
+
+### **Maps / Location Pickers**
+
+- **Purpose / Use:** Visualize locations and select positions.
+- **Best Practices:**
+    - Support zoom and pan.
+    - Clearly indicate selected location.
+    - Use responsive controls for mobile.
+- **Subcomponents:**
+    - Map canvas
+    - Marker / pin
+    - Zoom controls
+    - Search input (optional)
+- **UX Examples:** Google Maps, Airbnb location picker.
+
+### **Charts / Graphs**
+
+- **Purpose / Use:** Visualize complex data efficiently.
+- **Best Practices:**
+    - Label axes and data points.
+    - Use tooltips for detail.
+    - Choose chart type appropriate to data.
+- **Subcomponents:**
+    - Axis labels
+    - Data series / lines / bars
+    - Legend
+    - Tooltip hover states
+- **UX Examples:** Google Analytics dashboards, Figma analytics.
+
+### **Interactive Animations / Microinteractions**
+
+- **Purpose / Use:** Give feedback or enhance user engagement.
+- **Best Practices:**
+    - Animate small changes (button press, hover, notifications).
+    - Avoid distraction or performance impact.
+    - Maintain consistency across the app.
+- **Subcomponents:**
+    - Trigger element
+    - Animation container
+    - Feedback state
+- **UX Examples:** Slack message reactions, iOS toggles.
+
+---
+
+## **6. Notifications & Feedback**
+
+### **Toasts / Snackbars**
+
+- **Purpose / Use:** Brief messages for non-critical feedback.
+- **Best Practices:**
+    - Auto-dismiss in 3–5 seconds.
+    - Avoid stacking multiple messages.
+    - Use neutral or subtle colors for info; red for errors.
+- **Subcomponents:**
+    - Message text
+    - Optional action button
+    - Close / dismiss icon
+- **UX Examples:** Gmail sent notification, Stripe checkout confirmation.
+
+### **Alerts / Confirmation Dialogs**
+
+- **Purpose / Use:** Communicate important information or require user decision.
+- **Best Practices:**
+    - Keep concise.
+    - Include clear primary/secondary buttons.
+    - Avoid modal fatigue.
+- **Subcomponents:**
+    - Header / title
+    - Body / message
+    - Action buttons (confirm/cancel)
+    - Close icon
+- **UX Examples:** Dropbox delete confirmation, Medium publish dialog.
+
+### **Inline Validation / Error Messages**
+
+- **Purpose / Use:** Guide users to correct mistakes immediately.
+- **Best Practices:**
+    - Display near relevant field.
+    - Use actionable, clear language.
+    - Avoid generic errors (“Invalid input”).
+- **Subcomponents:**
+    - Error text
+    - Icon
+    - Field highlight / border
+- **UX Examples:** Stripe checkout, LinkedIn forms.
+
+### **Status Indicators**
+
+- **Purpose / Use:** Show system or item status.
+- **Best Practices:**
+    - Combine color + text for accessibility.
+    - Keep labels concise.
+    - Maintain consistent meanings across UI.
+- **Subcomponents:**
+    - Icon / color dot
+    - Label text
+- **UX Examples:** Slack user online/offline, Jira ticket statuses.
+
+### **Tooltips / Walkthroughs**
+
+- **Purpose / Use:** Provide guidance or onboarding hints.
+- **Best Practices:**
+    - Short and concise.
+    - Trigger on hover, focus, or first-time visit.
+    - Dismissible.
+- **Subcomponents:**
+    - Trigger element
+    - Tooltip container
+    - Arrow / pointer
+- **UX Examples:** Figma first-time hints, Asana task walkthrough.
+
+---
+
+## **7. Account & Personalization**
+
+### **User Profiles**
+
+- **Purpose / Use:** Represent users; allow personalization.
+- **Best Practices:**
+    - Display essential info prominently.
+    - Easy edit options.
+    - Keep sensitive data secure.
+- **Subcomponents:**
+    - Avatar / profile picture
+    - Name / username
+    - Contact info
+    - Settings / preferences
+- **UX Examples:** LinkedIn, Slack profile panel.
+
+### **Login / Signup Forms**
+
+- **Purpose / Use:** Authenticate users.
+- **Best Practices:**
+    - Minimize fields; clear call-to-action.
+    - Support social login.
+    - Validate inputs inline.
+- **Subcomponents:**
+    - Input fields (email, password)
+    - Submit button
+    - Social login buttons
+    - Forgot password link
+- **UX Examples:** Medium login, Spotify signup.
+
+### **Password Reset / Recovery**
+
+- **Purpose / Use:** Help users regain access.
+- **Best Practices:**
+    - Email verification step.
+    - Clear instructions.
+    - Secure token expiration.
+- **Subcomponents:**
+    - Email input field
+    - Submit button
+    - Confirmation message
+- **UX Examples:** Gmail reset flow, Facebook password recovery.
+
+### **Settings / Preferences Panels**
+
+- **Purpose / Use:** User customization and control.
+- **Best Practices:**
+    - Group related options.
+    - Use toggles, dropdowns, or checkboxes.
+    - Save/cancel actions clearly visible.
+- **Subcomponents:**
+    - Section headers
+    - Input controls (toggle, dropdown, text)
+    - Save / Cancel buttons
+- **UX Examples:** Slack settings, iOS app settings.
+
+### **Notifications Settings**
+
+- **Purpose / Use:** Let users control notification type/frequency.
+- **Best Practices:**
+    - Easy to access.
+    - Clear ON/OFF toggles.
+    - Group by type (email, push, SMS).
+- **Subcomponents:**
+    - Toggle switches
+    - Section headers
+    - Save changes button
+- **UX Examples:** Gmail notification settings, LinkedIn alerts.
+
+### **Multi-factor Authentication (MFA)**
+
+- **Purpose / Use:** Add security for sensitive accounts.
+- **Best Practices:**
+    - Optional but recommended.
+    - Step-by-step guidance.
+    - Support multiple MFA methods (SMS, authenticator app).
+- **Subcomponents:**
+    - Setup instructions
+    - Input field / verification code
+    - Backup codes
+- **UX Examples:** Google Account MFA, Dropbox security.
+
+---
+
+## **8. Miscellaneous / Advanced**
+
+### **Search Autocomplete**
+
+- **Purpose / Use:** Accelerate search and reduce errors.
+- **Best Practices:**
+    - Provide relevant suggestions.
+    - Highlight matches.
+    - Allow manual input if needed.
+- **Subcomponents:**
+    - Input field
+    - Suggestion list
+    - Highlighted text matches
+- **UX Examples:** Gmail autocomplete, Google search suggestions.
+
+### **Infinite Scroll / Lazy Loading**
+
+- **Purpose / Use:** Load large datasets progressively.
+- **Best Practices:**
+    - Show loading indicator.
+    - Maintain scroll position.
+    - Consider pagination fallback for accessibility.
+- **Subcomponents:**
+    - List/grid container
+    - Loading indicator
+    - Sentinel / trigger element
+- **UX Examples:** Instagram feed, Twitter timeline.
+
+### **Tags / Labels / Categories**
+
+- **Purpose / Use:** Organize, filter, or categorize content.
+- **Best Practices:**
+    - Keep concise.
+    - Allow removal if interactive.
+    - Use consistent colors/styles.
+- **Subcomponents:**
+    - Label text
+    - Optional icon
+    - Remove button
+- **UX Examples:** Gmail labels, Trello board tags.
+
+### **Collapsible Sections**
+
+- **Purpose / Use:** Reduce visual clutter by hiding optional info.
+- **Best Practices:**
+    - Default collapsed for long content.
+    - Animate transitions.
+    - Provide clear trigger/arrow.
+- **Subcomponents:**
+    - Section header / trigger
+    - Content panel
+- **UX Examples:** FAQ pages, Gmail email threads.
+
+### **Interactive Maps / Geolocation**
+
+- **Purpose / Use:** Display locations or allow selection.
+- **Best Practices:**
+    - Show user location.
+    - Allow zoom/pan.
+    - Responsive controls for mobile.
+- **Subcomponents:**
+    - Map canvas
+    - Marker / pin
+    - Zoom controls
+    - Optional search / filter
+- **UX Examples:** Google Maps, Airbnb map view.
+
+### **Export / Import Data**
+
+- **Purpose / Use:** Facilitate data transfer.
+- **Best Practices:**
+    - Clear file format info.
+    - Confirm destructive actions.
+    - Show progress indicator.
+- **Subcomponents:**
+    - File input / selector
+    - Progress bar
+    - Success/error messages
+- **UX Examples:** Airtable CSV export, Google Contacts import.
