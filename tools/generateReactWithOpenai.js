@@ -61,15 +61,13 @@ while (fs.existsSync(path.join(generatedRoot, finalName))) {
 
 const projectDir = path.join(generatedRoot, finalName);
 const srcDir = path.join(projectDir, "src");
-const publicDir = path.join(projectDir, "public");
 fs.mkdirSync(srcDir, { recursive: true });
-fs.mkdirSync(publicDir, { recursive: true });
 
 console.log("📂 Project folder:", projectDir);
 
 // ---------- 7️⃣ Create index.html ----------
 fs.writeFileSync(
-  path.join(publicDir, "index.html"),
+  path.join(projectDir, "index.html"), // 👈 write to root
   `<!DOCTYPE html>
 <html lang="en">
   <head>

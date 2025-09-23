@@ -5,39 +5,39 @@
       "id": "widget",
       "ui": {
         "type": "blank",
-        "title": "Enlight Widget in Banking App",
+        "title": "Home Dashboard Widget",
         "layout": "single-column"
       }
     },
     {
-      "id": "onboarding_learn",
+      "id": "onboarding-learn",
       "ui": {
         "type": "blank",
-        "title": "Onboarding - Learn",
+        "title": "Onboarding Screen - Learn",
         "layout": "single-column"
       }
     },
     {
-      "id": "onboarding_earn",
+      "id": "onboarding-earn",
       "ui": {
         "type": "blank",
-        "title": "Onboarding - Earn",
+        "title": "Onboarding Screen - Earn",
         "layout": "single-column"
       }
     },
     {
-      "id": "onboarding_redeem",
+      "id": "onboarding-redeem",
       "ui": {
         "type": "blank",
-        "title": "Onboarding - Redeem",
+        "title": "Onboarding Screen - Redeem",
         "layout": "single-column"
       }
     },
     {
-      "id": "sso_link",
+      "id": "bank-sso-link",
       "ui": {
         "type": "blank",
-        "title": "Link User Profile via SSO",
+        "title": "Bank SSO Link",
         "layout": "single-column"
       }
     },
@@ -50,28 +50,18 @@
       }
     },
     {
-      "id": "activity_choice",
-      "ui": {
-        "type": "message",
-        "title": "Processing",
-        "text": "Processing your request...",
-        "severity": "info",
-        "layout": "centered"
-      }
-    },
-    {
-      "id": "mission_list",
+      "id": "missions-list",
       "ui": {
         "type": "blank",
-        "title": "Mission List Screen",
+        "title": "Mission List",
         "layout": "single-column"
       }
     },
     {
-      "id": "mission_detail",
+      "id": "mission-detail",
       "ui": {
         "type": "detail",
-        "title": "Mission Detail Screen",
+        "title": "Mission Detail",
         "layout": "single-column",
         "components": [
           {
@@ -83,58 +73,82 @@
       }
     },
     {
-      "id": "mission_progress",
+      "id": "mission-progress",
       "ui": {
         "type": "blank",
-        "title": "Mission Progress Screen",
+        "title": "Mission Progress",
         "layout": "single-column"
       }
     },
     {
-      "id": "mission_completion",
+      "id": "mission-complete",
       "ui": {
         "type": "blank",
-        "title": "Mission Completion Screen",
+        "title": "Mission Completion",
         "layout": "single-column"
       }
     },
     {
-      "id": "quiz_selection",
+      "id": "quizzes-list",
       "ui": {
         "type": "blank",
-        "title": "Quiz Selection Screen",
+        "title": "Quiz Selection",
         "layout": "single-column"
       }
     },
     {
-      "id": "quiz_intro",
+      "id": "quiz-intro",
       "ui": {
         "type": "blank",
-        "title": "Quiz Intro Screen",
+        "title": "Quiz Intro",
         "layout": "single-column"
       }
     },
     {
-      "id": "quiz_question",
+      "id": "quiz-question",
       "ui": {
         "type": "blank",
-        "title": "Question Screen",
+        "title": "Quiz Question",
         "layout": "single-column"
       }
     },
     {
-      "id": "quiz_completion",
+      "id": "quiz-complete",
       "ui": {
         "type": "blank",
-        "title": "Quiz Completion Screen",
+        "title": "Quiz Completion",
         "layout": "single-column"
       }
     },
     {
-      "id": "rewards_catalog",
+      "id": "rewards-catalog",
       "ui": {
         "type": "blank",
         "title": "Rewards Catalog",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "notifications",
+      "ui": {
+        "type": "blank",
+        "title": "Notifications/Engagement",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "profile-badges",
+      "ui": {
+        "type": "blank",
+        "title": "Profile & Badges",
+        "layout": "single-column"
+      }
+    },
+    {
+      "id": "settings",
+      "ui": {
+        "type": "blank",
+        "title": "Settings & Preferences",
         "layout": "single-column"
       }
     }
@@ -142,43 +156,38 @@
   "routes": [
     {
       "from": "widget",
-      "to": "onboarding_learn",
-      "when": "widget tapped"
+      "to": "onboarding-learn"
     },
     {
-      "from": "onboarding_learn",
-      "to": "onboarding_earn",
-      "when": "next"
+      "from": "onboarding-learn",
+      "to": "onboarding-earn"
     },
     {
-      "from": "onboarding_earn",
-      "to": "onboarding_redeem",
-      "when": "next"
+      "from": "onboarding-earn",
+      "to": "onboarding-redeem"
     },
     {
-      "from": "onboarding_redeem",
-      "to": "sso_link",
-      "when": "get started"
+      "from": "onboarding-redeem",
+      "to": "bank-sso-link"
     },
     {
-      "from": "sso_link",
-      "to": "dashboard",
-      "when": "profile linked"
+      "from": "bank-sso-link",
+      "to": "dashboard"
     },
     {
       "from": "dashboard",
-      "to": "activity_choice",
-      "when": "user selects activity"
+      "to": "missions-list",
+      "when": "Selects Missions tab"
     },
     {
-      "from": "activity_choice",
-      "to": "mission_list",
-      "when": "missions selected"
+      "from": "dashboard",
+      "to": "quizzes-list",
+      "when": "Selects Quizzes tab"
     },
     {
-      "from": "activity_choice",
-      "to": "quiz_selection",
-      "when": "quizzes selected"
+      "from": "dashboard",
+      "to": "rewards-catalog",
+      "when": "Selects Rewards tab"
     }
   ]
 }

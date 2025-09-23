@@ -4,52 +4,59 @@
     {
       "id": "widget",
       "kind": "page",
-      "title": "Enlight Widget in Banking App",
+      "title": "Home Dashboard Widget",
       "data": {
-        "description": "Card on home dashboard with Enlight branding adapted to bank colors",
-        "triggers": [
-          "checking balances",
-          "finishing transaction",
-          "exploring savings"
-        ]
+        "location": "Bank app home dashboard",
+        "appearance": {
+          "style": "Card",
+          "visualIdentity": "Enlight light/brightness",
+          "palette": "Bank colors",
+          "copy": "Boost your knowledge, earn rewards."
+        },
+        "triggerOptions": [
+          "After balance check",
+          "Post-transaction",
+          "When exploring savings products"
+        ],
+        "action": "Tap to start Enlight onboarding"
       }
     },
     {
-      "id": "onboarding_learn",
+      "id": "onboarding-learn",
       "kind": "page",
-      "title": "Onboarding - Learn",
+      "title": "Onboarding Screen - Learn",
       "data": {
-        "message": "Enhance your financial skills",
+        "content": "Enhance your financial skills.",
         "illustration": true,
         "cta": "Get Started"
       }
     },
     {
-      "id": "onboarding_earn",
+      "id": "onboarding-earn",
       "kind": "page",
-      "title": "Onboarding - Earn",
+      "title": "Onboarding Screen - Earn",
       "data": {
-        "message": "Complete challenges to gain points",
+        "content": "Complete challenges to gain points.",
         "illustration": true,
         "cta": "Get Started"
       }
     },
     {
-      "id": "onboarding_redeem",
+      "id": "onboarding-redeem",
       "kind": "page",
-      "title": "Onboarding - Redeem",
+      "title": "Onboarding Screen - Redeem",
       "data": {
-        "message": "Exchange points for rewards",
+        "content": "Exchange points for rewards.",
         "illustration": true,
         "cta": "Get Started"
       }
     },
     {
-      "id": "sso_link",
+      "id": "bank-sso-link",
       "kind": "action",
-      "title": "Link User Profile via SSO",
+      "title": "Bank SSO Link",
       "data": {
-        "description": "Securely tie Enlight profile to banking identity"
+        "description": "Link Bank SSO with Enlight profile to tie points and progress"
       }
     },
     {
@@ -57,157 +64,163 @@
       "kind": "page",
       "title": "Enlight Dashboard",
       "data": {
-        "components": [
-          "points balance",
-          "progress tracker",
-          "missions tab",
-          "quizzes tab",
-          "rewards tab"
-        ],
-        "personalization": true
-      }
-    },
-    {
-      "id": "activity_choice",
-      "kind": "decision",
-      "title": "Choose Activity Type"
-    },
-    {
-      "id": "mission_list",
-      "kind": "page",
-      "title": "Mission List Screen",
-      "data": {
-        "filters": [
-          "Active",
-          "Completed",
-          "Upcoming"
-        ],
-        "components": [
-          "titles",
-          "progress bars",
-          "rewards"
+        "elements": [
+          "Points balance display",
+          "Progress tracker",
+          "Tabs: Missions, Quizzes, Rewards",
+          "Personalized suggestions"
         ]
       }
     },
     {
-      "id": "mission_detail",
+      "id": "missions-list",
       "kind": "page",
-      "title": "Mission Detail Screen",
+      "title": "Mission List",
       "data": {
-        "components": [
-          "description",
-          "steps",
-          "deadline",
-          "points reward",
-          "FAQ"
-        ],
-        "cta": "Start Mission"
-      }
-    },
-    {
-      "id": "mission_progress",
-      "kind": "page",
-      "title": "Mission Progress Screen",
-      "data": {
-        "components": [
-          "live tracker",
-          "visual animations",
-          "banking flow links"
-        ],
-        "feedback": "progress updates"
-      }
-    },
-    {
-      "id": "mission_completion",
-      "kind": "page",
-      "title": "Mission Completion Screen",
-      "data": {
-        "components": [
-          "celebration animation",
-          "badge unlocked",
-          "points confirmation"
-        ],
-        "cta": "Go to Rewards"
-      }
-    },
-    {
-      "id": "quiz_selection",
-      "kind": "page",
-      "title": "Quiz Selection Screen",
-      "data": {
-        "themes": [
-          "Budgeting Basics",
-          "Travel Safety",
-          "Credit Cards 101"
-        ],
-        "components": [
-          "difficulty",
-          "time estimate",
-          "reward points"
+        "elements": [
+          "Missions with progress bar and reward",
+          "Filters: Active/Completed/Upcoming"
         ]
       }
     },
     {
-      "id": "quiz_intro",
+      "id": "mission-detail",
       "kind": "page",
-      "title": "Quiz Intro Screen",
+      "title": "Mission Detail",
       "data": {
-        "components": [
-          "title",
-          "description",
-          "learning outcome",
-          "reward points"
-        ],
-        "cta": "Start Quiz"
-      }
-    },
-    {
-      "id": "quiz_question",
-      "kind": "page",
-      "title": "Question Screen",
-      "data": {
-        "components": [
-          "scenario",
-          "multiple choice",
-          "immediate feedback",
-          "progress indicator"
-        ],
-        "features": [
-          "exit and resume"
+        "elements": [
+          "Full description",
+          "Steps",
+          "Deadline",
+          "Point value",
+          "FAQ: How this works",
+          "CTA: Start Mission"
         ]
       }
     },
     {
-      "id": "quiz_completion",
+      "id": "mission-progress",
       "kind": "page",
-      "title": "Quiz Completion Screen",
+      "title": "Mission Progress",
       "data": {
-        "components": [
-          "final score",
-          "points earned",
-          "knowledge recap",
-          "celebration animation"
-        ],
-        "ctas": [
-          "Retry for bonus points",
-          "Go to Rewards"
+        "elements": [
+          "Live tracker",
+          "Partial-progress feedback",
+          "Banking function link"
         ]
       }
     },
     {
-      "id": "rewards_catalog",
+      "id": "mission-complete",
+      "kind": "page",
+      "title": "Mission Completion",
+      "data": {
+        "elements": [
+          "Celebration animation",
+          "Badge unlock",
+          "Points confirmation",
+          "CTA: Go to Rewards"
+        ]
+      }
+    },
+    {
+      "id": "quizzes-list",
+      "kind": "page",
+      "title": "Quiz Selection",
+      "data": {
+        "elements": [
+          "Quiz library with theme, difficulty, time, points"
+        ]
+      }
+    },
+    {
+      "id": "quiz-intro",
+      "kind": "page",
+      "title": "Quiz Intro",
+      "data": {
+        "elements": [
+          "Title",
+          "Description",
+          "Learning outcome",
+          "Points reward",
+          "CTA: Start Quiz"
+        ]
+      }
+    },
+    {
+      "id": "quiz-question",
+      "kind": "page",
+      "title": "Quiz Question",
+      "data": {
+        "elements": [
+          "Scenario prompt",
+          "Multiple-choice answers",
+          "Immediate feedback",
+          "Question progress indicator",
+          "Option to exit/resume"
+        ]
+      }
+    },
+    {
+      "id": "quiz-complete",
+      "kind": "page",
+      "title": "Quiz Completion",
+      "data": {
+        "elements": [
+          "Final score",
+          "Points earned",
+          "Knowledge recap",
+          "CTA: Retry for bonus or Go to Rewards"
+        ]
+      }
+    },
+    {
+      "id": "rewards-catalog",
       "kind": "page",
       "title": "Rewards Catalog",
       "data": {
         "categories": [
-          "financial perks",
-          "lifestyle",
-          "charitable"
+          "Financial perks (cashback, fee waivers, bonuses)",
+          "Lifestyle (gift cards, discounts, cinema tickets)",
+          "Charitable donations"
         ],
-        "components": [
-          "filters",
-          "point costs",
-          "redeem buttons"
+        "layout": "Shop-like UI with filters, categories, cost, and redeem button"
+      }
+    },
+    {
+      "id": "notifications",
+      "kind": "page",
+      "title": "Notifications/Engagement",
+      "data": {
+        "examples": [
+          "Point milestone nudges",
+          "New mission/seasonal quiz alerts"
+        ],
+        "requirement": "Subtle and opt-in, compliant with banking standards"
+      }
+    },
+    {
+      "id": "profile-badges",
+      "kind": "page",
+      "title": "Profile & Badges",
+      "data": {
+        "badges": [
+          "Quiz Master",
+          "Savings Starter"
+        ],
+        "progression": "Titles & tiers",
+        "motivation": "Social/status"
+      }
+    },
+    {
+      "id": "settings",
+      "kind": "page",
+      "title": "Settings & Preferences",
+      "data": {
+        "elements": [
+          "Opt-in notifications",
+          "Language selection",
+          "Accessibility options"
         ]
       }
     }
@@ -215,43 +228,38 @@
   "edges": [
     {
       "from": "widget",
-      "to": "onboarding_learn",
-      "when": "widget tapped"
+      "to": "onboarding-learn"
     },
     {
-      "from": "onboarding_learn",
-      "to": "onboarding_earn",
-      "when": "next"
+      "from": "onboarding-learn",
+      "to": "onboarding-earn"
     },
     {
-      "from": "onboarding_earn",
-      "to": "onboarding_redeem",
-      "when": "next"
+      "from": "onboarding-earn",
+      "to": "onboarding-redeem"
     },
     {
-      "from": "onboarding_redeem",
-      "to": "sso_link",
-      "when": "get started"
+      "from": "onboarding-redeem",
+      "to": "bank-sso-link"
     },
     {
-      "from": "sso_link",
-      "to": "dashboard",
-      "when": "profile linked"
+      "from": "bank-sso-link",
+      "to": "dashboard"
     },
     {
       "from": "dashboard",
-      "to": "activity_choice",
-      "when": "user selects activity"
+      "to": "missions-list",
+      "when": "Selects Missions tab"
     },
     {
-      "from": "activity_choice",
-      "to": "mission_list",
-      "when": "missions selected"
+      "from": "dashboard",
+      "to": "quizzes-list",
+      "when": "Selects Quizzes tab"
     },
     {
-      "from": "activity_choice",
-      "to": "quiz_selection",
-      "when": "quizzes selected"
+      "from": "dashboard",
+      "to": "rewards-catalog",
+      "when": "Selects Rewards tab"
     }
   ]
 }

@@ -1,7 +1,7 @@
 // tools/llmParse.js
 import fs from "fs";
 import path from "path";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai"; // ⬅️ use OpenAI SDK
 import { z } from "zod";
 import "dotenv/config";
 import { jsonrepair } from "jsonrepair";
@@ -27,31 +27,22 @@ const flowSchema = z.object({
 });
 
 // ---------- 2️⃣ Paths ----------
-const root = process.cwd(); // project root
-const transcriptPath = path.join(root, "data", "message.txt");
+const root = process.cwd();
+const transcriptPath = path.join(root, "data", "functional_specification.txt");
 const flowPath = path.join(root, "data", "flow.json");
 
 // ---------- 3️⃣ Check transcript ----------
 console.log("🔍 Checking environment...");
-console.log("API Key present:", !!process.env.ANTHROPIC_API_KEY);
+console.log("API Key present:", !!process.env.OPENAI_API_KEY2);
 console.log(
   "API Key prefix:",
-  process.env.ANTHROPIC_API_KEY?.substring(0, 10) + "..."
+  process.env.OPENAI_API_KEY2?.substring(0, 10) + "..."
 );
 console.log("Current working directory:", root);
 console.log("Looking for transcript at:", transcriptPath);
 
 if (!fs.existsSync(transcriptPath)) {
   console.error("❌ Transcript not found:", transcriptPath);
-  console.log("📁 Files in data directory:");
-  const dataDir = path.join(root, "data");
-  if (fs.existsSync(dataDir)) {
-    fs.readdirSync(dataDir).forEach((file) => {
-      console.log("  -", file);
-    });
-  } else {
-    console.log("❌ Data directory doesn't exist:", dataDir);
-  }
   process.exit(1);
 }
 
@@ -76,15 +67,12 @@ const flowJsonSchema = {
       items: {
         type: "object",
         additionalProperties: false,
-        required: ["id", "kind"], // ✅ align with Zod (title/data optional)
+        required: ["id", "kind"],
         properties: {
           id: { type: "string" },
           kind: { type: "string", enum: ["page", "decision", "action"] },
           title: { type: "string" },
-          data: {
-            type: "object",
-            additionalProperties: true,
-          },
+          data: { type: "object", additionalProperties: true },
         },
       },
     },
@@ -93,7 +81,7 @@ const flowJsonSchema = {
       items: {
         type: "object",
         additionalProperties: false,
-        required: ["from", "to"], // ✅ align with Zod (when optional)
+        required: ["from", "to"],
         properties: {
           from: { type: "string" },
           to: { type: "string" },
@@ -104,32 +92,24 @@ const flowJsonSchema = {
   },
 };
 
-// ---------- 5️⃣ Anthropic client ----------
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+// ---------- 5️⃣ OpenAI client ----------
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY2 });
 
-// ---------- 6️⃣ Helper function to extract JSON from markdown ----------
+// ---------- 6️⃣ Helper to extract JSON ----------
 function extractJsonFromResponse(text) {
-  // Try to find JSON within markdown code blocks
   const jsonBlockRegex = /```(?:json)?\s*([\s\S]*?)\s*```/i;
   const match = text.match(jsonBlockRegex);
+  if (match) return match[1].trim();
 
-  if (match) {
-    return match[1].trim();
-  }
-
-  // If no code blocks, try to find JSON-like content
   const jsonStart = text.indexOf("{");
   const jsonEnd = text.lastIndexOf("}");
-
   if (jsonStart !== -1 && jsonEnd !== -1 && jsonEnd > jsonStart) {
     return text.substring(jsonStart, jsonEnd + 1);
   }
-
-  // Return original text if no patterns found
   return text.trim();
 }
 
-// ---------- 7️⃣ LLM prompt ----------
+// ---------- 7️⃣ Prompt ----------
 const system = `You are a product designer assistant.
 Convert user transcripts to a structured app flow in JSON.
 
@@ -137,36 +117,30 @@ CRITICAL: Return ONLY valid JSON that matches this schema. Do not wrap in markdo
 
 JSON Schema:
 ${JSON.stringify(flowJsonSchema, null, 2)}
-
-Examples of node types:
-- "page": A screen/view (login page, dashboard, etc.)
-- "decision": A user choice point (success/error, yes/no)  
-- "action": A system action (validate, save, redirect)
-
-Return only the JSON object, nothing else.`;
+`;
 
 const user = `Transcript:
 """
 ${transcript}
 """
-
 Convert this to JSON following the exact schema provided. Return only the JSON object.`;
 
-// ---------- 8️⃣ Call Claude ----------
+// ---------- 8️⃣ Call OpenAI ----------
 async function main() {
   try {
-    const response = await client.messages.create({
-      model: "claude-sonnet-4-20250514", // Fixed model name
+    const response = await client.chat.completions.create({
+      model: "gpt-4.1", // choose any GPT-4/4.1 model you prefer
       max_tokens: 1500,
-      system: system,
-      messages: [{ role: "user", content: user }],
+      messages: [
+        { role: "system", content: system },
+        { role: "user", content: user },
+      ],
     });
 
-    const raw = response.content[0].text;
+    const raw = response.choices[0].message.content;
     console.log("Raw LLM output:\n", raw);
     console.log("\n" + "=".repeat(50) + "\n");
 
-    // ---------- 9️⃣ Extract and parse JSON ----------
     const extractedJson = extractJsonFromResponse(raw);
     console.log("Extracted JSON:\n", extractedJson);
     console.log("\n" + "=".repeat(50) + "\n");
@@ -174,27 +148,18 @@ async function main() {
     let flow;
     try {
       flow = JSON.parse(extractedJson);
-    } catch (err) {
+    } catch {
       console.warn("⚠️ JSON.parse failed, trying jsonrepair...");
-      try {
-        const repaired = jsonrepair(extractedJson);
-        flow = JSON.parse(repaired);
-        console.log("🛠️ JSON successfully repaired with jsonrepair");
-      } catch (repairErr) {
-        console.error("❌ Failed to repair JSON with jsonrepair:", repairErr);
-        console.error("Original invalid JSON:\n", extractedJson);
-        process.exit(1);
-      }
+      const repaired = jsonrepair(extractedJson);
+      flow = JSON.parse(repaired);
+      console.log("🛠️ JSON successfully repaired with jsonrepair");
     }
 
-    // ---------- 1️⃣0️⃣ Validate with Zod ----------
     const parsed = flowSchema.parse(flow);
 
-    // ---------- 1️⃣1️⃣ Write to flow.json ----------
     fs.writeFileSync(flowPath, JSON.stringify(parsed, null, 2), "utf8");
     console.log("✅ flow.json written:", flowPath);
 
-    // ---------- 1️⃣2️⃣ Show summary ----------
     console.log(`\n📊 Flow Summary:`);
     console.log(`- Start node: ${parsed.start}`);
     console.log(`- Total nodes: ${parsed.nodes.length}`);
@@ -211,7 +176,7 @@ async function main() {
         console.error(`  - ${e.path.join(".")}: ${e.message}`)
       );
     } else {
-      console.error("Error calling Anthropic API:", err);
+      console.error("Error calling OpenAI API:", err);
     }
     process.exit(1);
   }

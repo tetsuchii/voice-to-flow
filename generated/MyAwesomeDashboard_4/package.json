@@ -1,0 +1,25 @@
+{
+  "name": "myawesomedashboard_4",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://tetsuchii.github.io/voice-to-flow/generated/MyAwesomeDashboard_4",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "gh-pages": "^6.3.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-router-dom": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^5.0.0"
+  }
+}

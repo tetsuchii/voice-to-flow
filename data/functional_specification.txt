@@ -1,0 +1,242 @@
+1. Product Overview
+
+Product Name: Enlight – Learn & Earn solution embedded in a partner bank’s mobile app
+Objective:
+
+Educate users on financial literacy through interactive missions and quizzes.
+
+Reward users with points redeemable for tangible benefits.
+
+Drive adoption of key banking features (e.g., savings, bill payments).
+
+Primary User Goals:
+
+Learn financial skills in a fun, contextual way.
+
+Earn and redeem points for rewards.
+
+Primary Business Goals:
+
+Increase engagement within the banking app.
+
+Encourage use of targeted banking products and actions.
+
+2. User Entry Point
+2.1 Widget
+
+Location: Bank app home dashboard.
+
+Appearance:
+
+Card-style component using Enlight’s “light/brightness” visual identity with the bank’s color palette.
+
+Copy example: “Boost your knowledge, earn rewards.”
+
+Trigger Options:
+
+After balance check.
+
+Post-transaction.
+
+When exploring savings products.
+
+Action: Tapping opens the Enlight Onboarding flow.
+
+3. Onboarding Flow
+
+Three lightweight screens, each with illustration and CTA: “Get Started.”
+
+Screen	Content
+Learn	“Enhance your financial skills.”
+Earn	“Complete challenges to gain points.”
+Redeem	“Exchange points for rewards.”
+
+Technical:
+
+Bank SSO links to Enlight profile to securely tie points and progress to the banking identity.
+
+4. Enlight Dashboard
+
+Landing page after onboarding.
+
+Elements:
+
+Points balance display.
+
+Progress tracker toward next reward.
+
+Navigation tabs/cards: Missions, Quizzes, Rewards.
+
+Personalized quiz/mission suggestions based on user profile (e.g., recent product usage).
+
+5. Activity Type A – Missions
+
+Real-world banking actions that earn points.
+
+5.1 Flow & Screens
+
+Mission List Screen
+
+List of missions with title, progress bar, reward points.
+
+Filters: Active / Completed / Upcoming.
+
+Mission Detail Screen
+
+Full description, steps, deadline, point value.
+
+FAQ section: “How this works.”
+
+CTA: “Start Mission.”
+
+Mission Progress Screen
+
+Live tracker (e.g., “1/3 deposits complete”).
+
+Partial-progress feedback and encouraging copy.
+
+Link to relevant banking function.
+
+Mission Completion Screen
+
+Celebration animation + badge unlock.
+
+Confirmation of points earned.
+
+CTA: “Go to Rewards.”
+
+5.2 Technical Notes
+
+Bank provides APIs/events to confirm mission actions (e.g., deposits, bill payments).
+
+Missions can trigger badges (e.g., “Savings Explorer”).
+
+6. Activity Type B – Quizzes
+
+Scenario-based learning experiences.
+
+6.1 Flow & Screens
+
+Quiz Selection Screen
+
+Library of themed quizzes (Budgeting Basics, Travel Safety, etc.).
+
+Shows difficulty level, estimated time, reward points.
+
+Quiz Intro Screen
+
+Title, description, learning outcome.
+
+Points reward highlighted.
+
+CTA: “Start Quiz.”
+
+Question Screen (repeated per question)
+
+Scenario prompt.
+
+Multiple-choice answers.
+
+Immediate feedback with explanation.
+
+Progress Screen
+
+“Question X of Y” indicator.
+
+Option to exit/resume.
+
+Quiz Completion Screen
+
+Final score, points earned.
+
+Knowledge recap.
+
+CTA: “Retry for bonus points” or “Go to Rewards.”
+
+6.2 Features
+
+Tiered difficulty: beginner / intermediate / expert.
+
+Partial points for lower scores; full points for perfect score on retry.
+
+Backend tracks attempts, completion, and scoring.
+
+7. Points, Progression & Rewards
+
+Points:
+
+Core currency, always visible on dashboard.
+
+Milestones & tiers (e.g., Tier 1: 500 pts, Tier 2: 1,000 pts).
+
+Badges & Titles:
+
+Examples: “Quiz Master,” “Savings Starter.”
+
+Provide social/status motivation.
+
+Rewards Catalog:
+
+Categories:
+
+Financial perks (cashback, fee waivers, savings bonuses).
+
+Lifestyle (gift cards, partner discounts, cinema tickets).
+
+Charitable donations.
+
+Shop-like UI with filters, categories, cost, and redeem button.
+
+Backend: Rewards catalog API supporting bank-fulfilled and third-party items.
+
+8. Retention & Engagement
+
+Notifications/Nudges:
+
+Examples: “You’re 50 points from your next reward.”
+
+Alerts for new missions or seasonal quiz packs.
+
+Must be subtle and opt-in to meet banking communication standards.
+
+Content Freshness:
+
+Seasonal quiz packs, limited-time rewards, themed missions.
+
+9. Technical Integration
+
+Authentication: Bank SSO to Enlight profile.
+
+Event Tracking: Bank APIs to report mission-related banking actions.
+
+Quiz Engine: Hosted within Enlight, embedded in bank app via webview or native module.
+
+Rewards Catalog: API-driven, supporting both internal and third-party fulfillment.
+
+Notification System: Bank’s push infrastructure with opt-in controls.
+
+10. Key User Journeys
+
+First-Time User:
+Widget → Onboarding → Dashboard → Select Quiz/Mission → Earn Points → Redeem Reward.
+
+Returning User:
+Bank app opens → Dashboard (shows points and progress) → Engage with new mission/quiz → Continue progression.
+
+11. Non-Functional Requirements
+
+Security: Banking-grade encryption; SSO ensures no separate password management.
+
+Performance: Lightweight assets for fast load within bank app.
+
+Accessibility: WCAG-compliant screens, clear feedback for all states.
+
+Localization: Support for multiple languages as required by bank markets.
+
+Approval & Next Steps
+
+Owner: Product Manager (Anna)
+
+Stakeholders: Bank Partner, Design, Tech, UX Research
+
+Next Milestone: Bank partner internal pitch and alignment on API requirements.
