@@ -65,7 +65,7 @@ export default function QuizzesList() {
                     variant="contained"
                     color="primary"
                     size="small"
-                    href={`/quiz-intro?id=${quiz.id}`}
+                    href={`#/quiz-intro?id=${quiz.id}`}
                     disabled={quiz.completed}
                   >
                     {quiz.completed ? "Completed" : "Start"}
