@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
+import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
 import AppBarLayout from './components/AppBarLayout';
 
@@ -19,10 +19,7 @@ import MissionDetail from './pages/mission_detail';
 import MissionProgress from './pages/mission_progress';
 import MissionCompletion from './pages/mission_completion';
 import QuizSelection from './pages/quiz_selection';
-import QuizIntro from './pages/quiz_intro';
-import QuizQuestion from './pages/quiz_question';
-import QuizCompletion from './pages/quiz_completion';
-import RewardsCatalog from './pages/rewards_catalog';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -44,10 +41,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/mission_progress" element={<MissionProgress />} />
             <Route path="/mission_completion" element={<MissionCompletion />} />
             <Route path="/quiz_selection" element={<QuizSelection />} />
-            <Route path="/quiz_intro" element={<QuizIntro />} />
-            <Route path="/quiz_question" element={<QuizQuestion />} />
-            <Route path="/quiz_completion" element={<QuizCompletion />} />
-            <Route path="/rewards_catalog" element={<RewardsCatalog />} />
             <Route path="*" element={<Navigate to="/widget" />} />
           </Routes>
         </AppBarLayout>
