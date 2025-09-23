@@ -2,7 +2,7 @@
   "name": "myawesomedashboard_4",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tetsuchii.github.io/voice-to-flow/MyAwesomeDashboard_4",
+  "homepage": "https://tetsuchii.github.io/voice-to-flow/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

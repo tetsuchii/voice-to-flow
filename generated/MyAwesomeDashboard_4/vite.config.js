@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/voice-to-flow/MyAwesomeDashboard_4/",
-  root: ".",
+  base: "/voice-to-flow/",
   publicDir: "public",
 });
