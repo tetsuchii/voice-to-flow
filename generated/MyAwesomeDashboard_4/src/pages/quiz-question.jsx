@@ -105,7 +105,7 @@ export default function QuizQuestion() {
                 <Button
                   variant="outlined"
                   color="primary"
-                  href="/#/quiz-complete"
+                  href="#/quiz-complete"
                   sx={{ mt: 2 }}
                 >
                   Continue
