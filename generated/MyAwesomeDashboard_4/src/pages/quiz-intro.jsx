@@ -34,7 +34,7 @@ export default function QuizIntro() {
             color="primary"
             size="large"
             sx={{ mt: 1 }}
-            href="/quiz-question"
+            href="/#/quiz-question"
           >
             Start Quiz
           </Button>

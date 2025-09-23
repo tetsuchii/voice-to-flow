@@ -66,7 +66,7 @@ export default function QuizComplete() {
       >
         Back to Dashboard
       </Button>
-      <Button color="inherit" href="/quizzes-list" sx={{ ml: 2 }}>
+      <Button color="inherit" href="/#/quizzes-list" sx={{ ml: 2 }}>
         More Quizzes
       </Button>
     </Box>
