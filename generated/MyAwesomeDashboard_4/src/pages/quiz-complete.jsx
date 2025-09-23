@@ -61,7 +61,7 @@ export default function QuizComplete() {
         variant="contained"
         color="primary"
         size="large"
-        href="/dashboard"
+        href="#/dashboard"
         sx={{ mb: 1 }}
       >
         Back to Dashboard
