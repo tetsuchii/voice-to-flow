@@ -1,67 +1,86 @@
 {
-  "start": "widget",
+  "start": "home",
   "pages": [
     {
-      "id": "widget",
+      "id": "home",
+      "ui": {
+        "type": "search",
+        "title": "Home",
+        "layout": "centered",
+        "fields": [
+          {
+            "name": "searchQuery",
+            "label": "Search",
+            "type": "text",
+            "placeholder": "Enter search term..."
+          }
+        ],
+        "actions": [
+          {
+            "id": "searchBtn",
+            "label": "Search",
+            "variant": "contained",
+            "color": "primary",
+            "action": "submit"
+          }
+        ]
+      }
+    },
+    {
+      "id": "onboarding",
+      "ui": {
+        "type": "message",
+        "title": "Processing",
+        "text": "Processing your request...",
+        "severity": "info",
+        "layout": "centered"
+      }
+    },
+    {
+      "id": "get-recipe",
       "ui": {
         "type": "blank",
-        "title": "Home Dashboard Widget",
+        "title": "Recipe Suggestion",
         "layout": "single-column"
       }
     },
     {
-      "id": "onboarding-learn",
+      "id": "ingredient-inventory",
       "ui": {
         "type": "blank",
-        "title": "Onboarding Screen - Learn",
+        "title": "Ingredient Inventory",
         "layout": "single-column"
       }
     },
     {
-      "id": "onboarding-earn",
+      "id": "meal-planner",
       "ui": {
         "type": "blank",
-        "title": "Onboarding Screen - Earn",
+        "title": "Meal Planner Calendar",
         "layout": "single-column"
       }
     },
     {
-      "id": "onboarding-redeem",
+      "id": "shopping-list",
       "ui": {
         "type": "blank",
-        "title": "Onboarding Screen - Redeem",
+        "title": "Shopping List",
         "layout": "single-column"
       }
     },
     {
-      "id": "bank-sso-link",
+      "id": "saved-recipes",
       "ui": {
         "type": "blank",
-        "title": "Bank SSO Link",
+        "title": "Saved Recipes",
         "layout": "single-column"
       }
     },
     {
-      "id": "dashboard",
-      "ui": {
-        "type": "blank",
-        "title": "Enlight Dashboard",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "missions-list",
-      "ui": {
-        "type": "blank",
-        "title": "Mission List",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "mission-detail",
+      "id": "recipe-details",
       "ui": {
         "type": "detail",
-        "title": "Mission Detail",
+        "title": "Recipe Details",
         "layout": "single-column",
         "components": [
           {
@@ -73,121 +92,121 @@
       }
     },
     {
-      "id": "mission-progress",
+      "id": "profile",
       "ui": {
         "type": "blank",
-        "title": "Mission Progress",
+        "title": "User Profile",
         "layout": "single-column"
       }
     },
     {
-      "id": "mission-complete",
+      "id": "reminder-action",
       "ui": {
         "type": "blank",
-        "title": "Mission Completion",
+        "title": "Ingredient Reminder",
         "layout": "single-column"
       }
     },
     {
-      "id": "quizzes-list",
+      "id": "social-sharing",
       "ui": {
         "type": "blank",
-        "title": "Quiz Selection",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "quiz-intro",
-      "ui": {
-        "type": "blank",
-        "title": "Quiz Intro",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "quiz-question",
-      "ui": {
-        "type": "blank",
-        "title": "Quiz Question",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "quiz-complete",
-      "ui": {
-        "type": "blank",
-        "title": "Quiz Completion",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "rewards-catalog",
-      "ui": {
-        "type": "blank",
-        "title": "Rewards Catalog",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "notifications",
-      "ui": {
-        "type": "blank",
-        "title": "Notifications/Engagement",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "profile-badges",
-      "ui": {
-        "type": "blank",
-        "title": "Profile & Badges",
-        "layout": "single-column"
-      }
-    },
-    {
-      "id": "settings",
-      "ui": {
-        "type": "blank",
-        "title": "Settings & Preferences",
+        "title": "Social Sharing",
         "layout": "single-column"
       }
     }
   ],
   "routes": [
     {
-      "from": "widget",
-      "to": "onboarding-learn"
+      "from": "home",
+      "to": "onboarding",
+      "when": "First time user or settings reset"
     },
     {
-      "from": "onboarding-learn",
-      "to": "onboarding-earn"
+      "from": "home",
+      "to": "get-recipe"
     },
     {
-      "from": "onboarding-earn",
-      "to": "onboarding-redeem"
+      "from": "home",
+      "to": "meal-planner"
     },
     {
-      "from": "onboarding-redeem",
-      "to": "bank-sso-link"
+      "from": "home",
+      "to": "ingredient-inventory"
     },
     {
-      "from": "bank-sso-link",
-      "to": "dashboard"
+      "from": "home",
+      "to": "saved-recipes"
     },
     {
-      "from": "dashboard",
-      "to": "missions-list",
-      "when": "Selects Missions tab"
+      "from": "home",
+      "to": "profile"
     },
     {
-      "from": "dashboard",
-      "to": "quizzes-list",
-      "when": "Selects Quizzes tab"
+      "from": "onboarding",
+      "to": "get-recipe"
     },
     {
-      "from": "dashboard",
-      "to": "rewards-catalog",
-      "when": "Selects Rewards tab"
+      "from": "onboarding",
+      "to": "meal-planner"
+    },
+    {
+      "from": "get-recipe",
+      "to": "recipe-details",
+      "when": "User selects a recipe"
+    },
+    {
+      "from": "get-recipe",
+      "to": "saved-recipes",
+      "when": "User saves/favorites a recipe"
+    },
+    {
+      "from": "get-recipe",
+      "to": "ingredient-inventory",
+      "when": "User wants to add another ingredient"
+    },
+    {
+      "from": "recipe-details",
+      "to": "meal-planner",
+      "when": "User adds recipe to calendar"
+    },
+    {
+      "from": "recipe-details",
+      "to": "saved-recipes",
+      "when": "User saves/favorites recipe"
+    },
+    {
+      "from": "meal-planner",
+      "to": "shopping-list"
+    },
+    {
+      "from": "meal-planner",
+      "to": "reminder-action"
+    },
+    {
+      "from": "shopping-list",
+      "to": "ingredient-inventory",
+      "when": "User updates inventory after shopping"
+    },
+    {
+      "from": "recipe-details",
+      "to": "ingredient-inventory",
+      "when": "Recipe cooked—deduct ingredients"
+    },
+    {
+      "from": "profile",
+      "to": "onboarding",
+      "when": "User edits cooking preferences or equipment"
+    },
+    {
+      "from": "saved-recipes",
+      "to": "recipe-details",
+      "when": "User opens saved recipe"
+    },
+    {
+      "from": "recipe-details",
+      "to": "social-sharing",
+      "when": "User shares recipe"
     }
   ]
 }

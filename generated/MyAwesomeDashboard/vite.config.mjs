@@ -5,4 +5,7 @@ export default defineConfig({
   plugins: [react()],
   root: ".",
   publicDir: false,
+  esbuild: {
+    target: "es2019", // ✅ Safari-friendly build
+  },
 });

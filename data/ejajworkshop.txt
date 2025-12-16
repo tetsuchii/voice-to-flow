@@ -1,0 +1,263 @@
+Nov 28, 2025
+ejaj dummy vörksopp - Transcript
+00:00:00
+ 
+Kitana Kovács: Hello mag.
+Gergő Tóth: Hello.
+Kitana Kovács: Hello.
+Gergő Tóth: How are you?
+Kitana Kovács: Who are you?
+Gergő Tóth: In English. English. In English. Okay. in English. Oh, sorry. Let me just plug in my keyboard because we have a cable chaos here in the office.
+Kitana Kovács: Hello colleagues.
+Gergő Tóth: Hello Let me see if it is working. No, I am. Is that the keyboard? No, it's not. Why isn't it working? What did you mean?
+Kitana Kovács: time window.
+Gergő Tóth: I'm working on it, b****. Shut the f******. Let me Let me refresh the page again. Wait, should I I think it's Hello everyone.
+Kitana Kovács: Hello colleagues.
+Gergő Tóth: Oh, that's amazing. If I if I if I spin the knob between the knob, we can adjust turn. If we turn the knob on the keyboard, the volume gets adjusted on my PC. You don't like to be gentle.
+Kitana Kovács: What did you expect it does?
+ 
+ 
+00:08:50
+ 
+Gergő Tóth: I don't know.
+Kitana Kovács: Oh, let let me show you. I we got a new keyboard. Let me show you. This is the volume knob. And it works like this.
+Gergő Tóth: knob. She also had a knob. That's amazing. Ladies and boys, what if we actually start working? Okay, with low enthusiasm n Not shy. I'm going to share the page the screen screen.
+Kitana Kovács: Not too close.
+Gergő Tóth: Yes. I'm very Get What I get?
+Kitana Kovács: I need a minute to put away my raot.
+Gergő Tóth: Oh, false. Should I put on that side? Oh, warning. as your stuff as well. No.
+Kitana Kovács: Mhm. Bless your colleague. Don't infect the client.
+Gergő Tóth: So today we are here to um to gather some insights uh about the the meal planner product which an is developing. Yes. Uh I'm GU the product designer on this project. Kitty She is queen.
+ 
+ 
+00:13:57
+ 
+Kitana Kovács: I'm Kitty. I am also a product designer but we are probably also um manage our meetings and the project as usual. I'm I'm the girl boss of the project.
+Gergő Tóth: I am the client. I think he's something.
+Enikő Lili Tóth: I'm sorry.
+Kitana Kovács: Mm- He does not know. Has no idea. This is horrific. But whatever.
+Enikő Lili Tóth: Um, hey man.
+Gergő Tóth: Mab still should whatever. So I want to develop a meal plan site because you know when you should eat or cook but you do not have the motivation or the creativity to do so.
+Kitana Kovács: So,
+Gergő Tóth: You just enter this little site and it gives you a food idea either recipe or restaurant from where you can order or food that you can make. you the f*** once to think about it. Okay, thank you for introducing the project, Anikur. You're very welcome. Um, let's look at our Figma board and let's start throwing up some ideas so we can uh gather some insights about uh your product and dish.
+ 
+ 
+00:16:20
+ 
+Gergő Tóth: Um so first let's gather some some context. I'm going to transform this. So uh let's talk about who would be using this product would be any good. This is a question for you. This is a question for me. I think it will mainly be young adults fresh to living alone or in sorry young adults. Mhm. Who are living alone or with friends with partner you know there is this constant struggle of having to cook your food but always having that common uh talk of what would you like to eat? I don't know you but I don't know either. So just to forgo this whole I don't know time cons time consuming matter they could just let this website decide for them. So what what what is the problem you want to solve? The inability to decide what to eat. The in Okay. The inability to decide to decide what to eat. Okay. My question is this is is this aimed at like regular folks or like maybe we want to include people who go to the gym or that's a lifestyle thing and then they maybe want uh they have more problems.
+ 
+ 
+00:18:24
+ 
+Gergő Tóth: They their problem is beyond just choosing what to eat. They want to track nutrition. they want to have meal plans or meal goals. Are we including them? Do we want to to branch to them? I mean, we could branch to them, but like firstly, I think it would be easier to just aim at more regular folks to like include what they have at home, what kind of food they have at home. the website just spits out what you can make uh from those ingredients. Okay. So another problem that we are trying to to solve is uh is uh keeping track of the ingredients we we have at home and finding a recipe that we can make based on the ingredients you already have. So it's uh how do we say this in a more compact way? Um, find recipes that are com that that that can be made with ingredients. We already already That's Sorry, I'm not used to this keyboard. Okay. Is this um is this like a shared issue?
+ 
+ 
+00:20:15
+ 
+Gergő Tóth: Like um it's not like it's it's it's a homekeeping thing, right? So it's not my personal problem if I'm living with someone. So we have some kind of social features. I believe yeah like if there are more people living in one household that is logical that I don't know like I bought something that my roommate does not know about but it is their turn to cook. Mhm. Mhm. So they should be able to view the ingredient list stuff that I bought and stuff that they bought. Let me families. How households in any shapes and sizes could be using this product or write it? Um, is this enough for us?
+Kitana Kovács: I think so.
+Gergő Tóth: Okay. Uh, what do we want to solve? Let's talk a bit more about that. So, we talked about inability to decide what to eat, find recipes that can be already made. Um, what about um I don't know allergies, special diets? Well, I mean they should be included especially considering the fact that it is a rising thing.
+ 
+ 
+00:22:06
+ 
+Gergő Tóth: So there are less folks who do not have allergies or use special diets than those who do.
+Kitana Kovács: Um, sorry. Uh, connected to this. Would this app work with ingredients outside of stuff that you already own? Or is that maybe an option? Or do we not want to include any ingredients that are not currently in your household?
+Gergő Tóth: I think that would be optional.
+Kitana Kovács: Mhm.
+Gergő Tóth: Yeah. So like we could be okay that's a a great idea actually. We so this could be used like on an ad hoc manner like I want to hook something right now that the stuff I have right now and sometimes maybe I want to plan ahead plan ahead for the week. So another problem we are trying to solve is meal planning for the week ahead. And it's not like um not like in the terms of special nutrition just knowing what I need to buy and how to manage my time for cooking. Yeah. So you know like especially with meal planning it can be like it gives you a checklist of what you have already at home and what you have to buy for the the meals.
+ 
+ 
+00:23:34
+ 
+Gergő Tóth: So we are also talking about a shopping list. Oh yeah but I think that is like the least least priority thing. So like it's it's a good it's a nice thing.
+Kitana Kovács: and also inventory management.
+Gergő Tóth: Yeah. That's a nice to have thing, right?
+Kitana Kovács: I think that's a must have because it needs to know what what ingredients it can include and what measures
+Gergő Tóth: Yes. Studio. Exactly. Oh my god. Yeah. Um, I'm back.
+Kitana Kovács: Okay.
+Gergő Tóth: The where and the when. Mhm. What do you mean by the one? Where would I be using this app and when would I be using this app? But first of all, I think it should be a website. But but I think like it is an at home like where else would you want to jump? It's an at home thing. Yeah, it's an at home thing and for them like around meal times around me I would be using around meal times.
+ 
+ 
+00:25:52
+ 
+Gergő Tóth: Okay. When else would you prepare food? Well, when I'm planning for food, it's not around meal time. True. But like when you have these questions of what would you like to eat? That usually happens around the meal time when you try to prepare some meal and you try to have the discussion of I am thinking about making lunch. What would you like to eat? And here comes the whole shebang. Shabban. I don't know choose, but I don't know either you choose.
+Kitana Kovács: I think we should uh also explore different personas because there are people who plan ahead not just around me at times but a week before or even a day before what they would like to eat.
+Gergő Tóth: I think uh let's complete the context part and then we can gather some person as okay.
+Kitana Kovács: Yeah. And come back after
+Gergő Tóth: Um okay so around meal times and probably around man when we have like family meeting going on about the next week when you have you know that you have friends coming over for a nice okay event upcoming upcoming events and parties, visitors, get togethers, get to get to get get to together.
+ 
+ 
+00:27:40
+ 
+Gergő Tóth: Um, okay. Would this be something like I'm I I could be using this throughout the day, like having some quick ideas and putting into it, or is it more like I'm sitting down, I'm spending the next 10 minutes with this and I'm not touching this again for the next week. Um, I think it can be a more adop thing like you don't even have to necessarily make the recipes, you know, just shooting random ideas for inspiration. So, gathering random maybe. Yeah, gathering random random idea. Yeah, because like what I have in my mind is sometimes like I'm randomly browsing Tik Tok, I'm seeing a recipe, I want to save it. Um, recipe seeing could be a great feature. Yeah, either like saving recipes that you think, oh yeah, I would like to try that or being able to save recipes that I have already made this and it was great, so I would like to make it. when I want to save a random random recipe. Yay. Okay. What is the wanted state?
+ 
+ 
+00:29:22
+ 
+Gergő Tóth: What what is like u the ideal form of the application? What's your dream about this? My dream about this? Yes. How would it work in its perfect?
+Kitana Kovács: What's the vision?
+Gergő Tóth: What's the vision? Yeah. But I don't know if you know the how the street kitchen app used to be. Used to be. It's not existing anymore. Oh, it's currently not existing.
+Kitana Kovács: Oh.
+Gergő Tóth: I love application. Yeah, sad news. But like that has some really good features of being able to to save the recipes. You get the shopping list for the recipes. It's like those so that that you can be able to to freely browse the stuff and like you know it can give you uh randomized site randomization site you know like just throw in your ingredients. Push the button and it's pizza recipes that you can make with ingredients.
+Kitana Kovács: Mhm. Did that include AI or was that from a selected I don't know X amount of recipes that you have the most ingredients matching Mhm.
+ 
+ 
+00:30:56
+ 
+Gergő Tóth: Like don't necessarily think it should include AI. Yeah, we need AI. A AI can make some fake recipes and I do not want to poison the users.
+Kitana Kovács: Mhm. Mhm.
+Gergő Tóth: Okay.
+Kitana Kovács: Bad enough.
+Gergő Tóth: So, it has to it has to have a database a data like aggregating recipes. Yes. Okay. What about the planning part? M like it could just gives you a calendar, you know, next week and you can just choose the food from the the list of what you want to make on set date days. So next week calendar with with the food, you know, like like the school schedule of Monday, soup and pasta and stuff like that. Soup and pasta and stuff like that. Yeah. All right. Do we need anything else?
+Kitana Kovács: Uh, I was thinking about the ingredients and when we want to send the user shopping. We will give them a shopping list, right?
+Gergő Tóth: Mhm.
+Kitana Kovács: And they will open that in the website and look at that shopping list and check what ingredients and how much and stuff, right?
+ 
+ 
+00:33:10
+ 
+Gergő Tóth: How much? I'm not sure about that because are ever changing.
+Kitana Kovács: Mhm. Mhm.
+Gergő Tóth: Not like depends on the brand and stuff, but like the the domain stuff of what you need for ingredients.
+Kitana Kovács: Mhm.
+Gergő Tóth: Yeah, I wouldn't personally say that you need to buy this specific brand of milk.
+Kitana Kovács: Mhm.
+Gergő Tóth: Just milk. Mayonnaise. Mayonnaise. Is mayonnaise an instrument?
+Kitana Kovács: Okay.
+Gergő Tóth: It is.
+Kitana Kovács: I think we're good. for now.
+Gergő Tóth: Okay. Do we need like a reminder that hey, you want to cook this on Thursday, but you don't have like this and this, so you should go to the convenience store by Wednesday to have the ingredients. So like maybe an ingredients reminder. Yeah, that's that's a great idea. Yeah. ingredient. Cool. How does it keep tracking of the ingredients? like do I have to manually check if it's uh well I mean when we like input the ingredients and then I press a recipe and say that I bake it.
+ 
+ 
+00:34:49
+ 
+Gergő Tóth: It should be logical that it just deducts those ingredients that I have already used in the previous recipe. Okay. So I need to exclusively use this app so it keeps track of my ingredients or you can update it manually. Okay. So, inventory automatic tracking based on recipes and manual syncing. Let's go syncing. Cool. Okay. Let's build some personas. Um, we can like just I don't know gather like some type of people. I was thinking maybe let's have a family mom. Yeah. And maybe like a university student for now and then we can see more. Yeah. So, let's have um Miss Apple M. Mrs. Apple or Madame Apple. Madame Madam. Yeah, let's have Madame. That's kind of Madame Apple. Um, and let's have her as like I don't know a teacher or something. Whatever. She can be an office girl like I don't know communications manager whatever. I don't think this is important for for this project.
+ 
+ 
+00:36:50
+ 
+Gergő Tóth: Let's have her position as a teacher and info about her. Um, she has two kids, a boy and a girl. Yeah. A loving husband who cannot cook. Yeah. So, she has to um let's say they shop together.
+Kitana Kovács: And also maybe include that the kids are picky. So they don't need any Yeah.
+Gergő Tóth: Okay. They shop together every weekend. But she is the planner. The kids are picky or allergic, whatever. Picky picky like I don't know they have irritable bow syndrome and and gluten allergy and lactose intolerance and they are also autistic and have down syndrome.
+Kitana Kovács: Okay.
+Gergő Tóth: That is quite the baggage Maf has. Yeah. But fortunately they live in Hungary where she can be working as a teacher where they get all the support from the government and the society that they did both social and monetary support. Exactly. She does not have you know budget restrictions. Not at all. Not in the slightest.
+ 
+ 
+00:38:40
+ 
+Gergő Tóth: Her aims are having a clear clear for weekly cooking. Um having uh having a uh collection of compatible recipe having a collection of compatible recipes for the family. So like you know he she has like a database of things that works for her children. Not necessarily favorites but things that surely they will eat. Yes. Um and she likes nice shopping lists. Maybe she looks out for deals. Yeah, she loves she loves good deals. Good deals. Okay. What are her needs? Well, I think she would like this whole website to be easily understood. like she already has enough problems with being a teacher and having two picky autistic easy works is also I don't think she needs another job. No. So quick quick use and like it needs to be she needs to be able to share with her husband so like even though the man doesn't cook he can still I don't know look at the green
+Kitana Kovács: He can make demands.
+Gergő Tóth: yeah make demands or you know just help her out with choosing recipes like oh yeah you could make her stuff husband though pain points for her.
+ 
+ 
+00:41:18
+ 
+Gergő Tóth: She does not have time to days, cook big so she needs simple recipes or time to cook big meals. Uh I think the the two ch child children children is a painoint in itself. The not cooking husband is also a painoint in itself. Yeah. The not cooking husband. The husband knows the pain point and she also has to look out for picky ingredients in G. Okay. What about her technological knowledge? I think she has like an average technology like not not really high but also not.
+Kitana Kovács: She has the basics down.
+Gergő Tóth: Yeah, she has the basics. Can you use a computer and a website? Yes, but nothing too fancy. Like emails are fine and messages and stuff like that is social media. Okay. Okay. Do we want her to be a Facebook mom who likes to share her recipes or this is what I cooked Facebook? Oh my god. Yeah, we can. Yeah, that's a need.
+ 
+ 
+00:43:08
+ 
+Gergő Tóth: Share recipes on the inter web on social media. Okay, these alphabets are quite large. Alphabets characters alphabet. Okay. Um, and a quote from her. If you don't eat the Brussels sprouts, you will get ice for dinner. You can't leave the table until you finish the vegetables. Eat your vegetable. Last week you liked it. What do you mean? You don't like it now? That's a very meta quote. Another thing I have to manage and I have to again. Okay. And the second group could be young peeps for now. And so we have So, we have greedy John. John. Oh, how do we spell John in? Yeah, he's the only I think. What do we know know about John? He is a pill at the university. Let's say he is poor. He gets monthly allowance from his parents. He get he gets monthly allowance. He loves to eat and he lives hates to cook and and he lives in student dorm.
+ 
+ 
+00:45:57
+ 
+Gergő Tóth: Lives in dorm, prefers quick but tasty meals. He he wants to um eat less uh pregnancy. He wants to eat less fast food. He should end up beating his balls grab. Yeah, but it's, you know, it's like the description of him. Yeah. He wants to eat less food and uh save money. by not that much. Let's save money by learning to cook a cook easy but tasty good tasting. Yes, I say that. But Um, now he has a tight budget. So not keeping cheat and like the food that he makes, it should be able to last you a longer time. Okay. Longlasting like meal prep compatible food. Yeah, like food that won't go bad after like two days. Meal prep compatible compatible needs. Okay, let's talk about G's needs. I think meal prepping is one of them. Like that's his need. Okay. Yeah. But that's not like a need from the product.
+ 
+ 
+00:48:21
+ 
+Gergő Tóth: What he needs I think of is is being able to search for specific kind of recipes. For example, meal prep meals. So he needs to filter recipes that recipes that are fitting his lifestyle. Um he needs beginner friendly stuff. Um yeah Yeah.
+Kitana Kovács: and maybe he wants to like try more advanced stuff later. So, so like a kind of a categorization, but that's like a side note.
+Gergő Tóth: Yeah. So let's say cateorized features. I just say that Um, he probably needs more hand holding while cooking.
+Kitana Kovács: Mhm.
+Gergő Tóth: So maybe a bit more precise based or tutorial based recipes, a more helpful recipes like in a technical person like cooking technical cooking cooking techniques based recipes like I don't know he might not understand how to prepare are meat.
+Kitana Kovács: or how to cook onion or stuff like that or even how to use like utensils and what utensils he should get that
+Gergő Tóth: Yeah. Or or like glazing onions, stuff like that. Yeah. What kind of grease he could use for different type of stuff?
+ 
+ 
+00:50:31
+ 
+Gergő Tóth: Yeah. Oh, great. Yeah. Yeah. Yeah. Yeah. Cooking tips. Let's say that. Um, cool.
+Kitana Kovács: I think his main pain point is he he doesn't know how to start or it's it might be overwhelming a bit coming from not cooking but ordering and then suddenly trying to book.
+Gergő Tóth: So, can you sum this up in a sentence?
+Kitana Kovács: So his pain point is that cooking seems overwhelming to him.
+Gergő Tóth: Okay. Cooking seems over. Well, some recipes need pricey ingredients. Yeah. Or like some recipes or multiple utensils that he doesn't Yeah. like a lot of plates or pots. Yeah. Needing kitchen tools and appliances. Time to use time consuming meals or time consuming um preparation preparation or time consuming um tasks. back of knowledge he will be fine. Yeah, he uses a lot of services. Has no problem using a smartphone. All right. Um, should we do the framing part?
+ 
+ 
+00:54:29
+ 
+Gergő Tóth: I think we could skip this. Yeah. Py or But I don't know what you're talking about.
+Kitana Kovács: I I I don't think this is necessary. Um Yeah.
+Gergő Tóth: Okay.
+Kitana Kovács: Yeah. I don't think we need this. I think we have talked about this.
+Gergő Tóth: Okay. So, let's just do a quick brainstorm and the feature dump.
+Kitana Kovács: Okay.
+Gergő Tóth: All right. Oh, yeah. Let's translate. Oh, I'm showing my crop.
+Kitana Kovács: English is skipping.
+Gergő Tóth: Um Niku, what could be any kind of hindrance or danger or problem while using the app? Well, I mean, if it doesn't sync, that could be no syncing or saving. No, not being able to Oh, that's an um recommending recipes that are incompatible with my household. For example, because of allergies or being that are not um okay ingredient list not being up to eight not being able to set that ingredients list. Uh that's more like an MVP. That's like it has to be able to do that.
+ 
+ 
+00:57:19
+ 
+Gergő Tóth: But yeah, ingredients list and being uh Yes, I'm shake. not actually giving me a recipe like like say I don't have the ingredients and so it does not recommend me would be without even I'm not recommending but you have these should you buy these so not recommending
+Kitana Kovács: Should that also not be an MVP that it should recommend maybe just one or two of the ingredients
+Gergő Tóth: anything useful
+Kitana Kovács: that you have? So it it must recommend you something and maybe send you for a shop as well because so what I'm thinking is that maybe your first impression of the product is that it will not recommend you anything
+Gergő Tóth: So, okay, that's Okay.
+Kitana Kovács: like that's that's not a good first impression.
+Gergő Tóth: Ability to command recipes and or actions and or ingredient to buy. Yeah. Okay. Okay. Let's talk about uh saving recipes. Saving recipes and notes. um having cate categorized uh recipe basically uh yeah recipe database Could we use something like we need to tell the app what kind of tools we have in our kitchen?
+ 
+ 
+01:01:16
+ 
+Gergő Tóth: So like it knows I don't have an air fryer. So it's not going to tell me to put anything in the air fryer. Maybe maybe it could have like multiple versions of the same recipe. So like it knows that if I have an air fryer and I just need to cook a small chicken, it's not going to tell me to turn on the oven. It's just going to tell me use the air fryer. So uh I don't um well you could be able to mix your big appliances right now. I don't know five different type sizes of pots and adapting to different kitchens by knowing the fascination appliances
+Kitana Kovács: equipment or inventory.
+Gergő Tóth: including uh kind of put up up. Yeah, this is so like if if it knows I have like a content grill, it could tell me to fry some or like cook some salmon or panini stuff like that. Yeah, if it knows I don't have a microwave, it not going to tell me to to m chocolate or butter in the microwave.
+ 
+ 
+01:03:00
+ 
+Kitana Kovács: But it could also tell you to get a microwave.
+Gergő Tóth: It would have been a young boy. So Wait, you think it means
+Kitana Kovács: Sorry, I'm here. I just over watered my bonsai and my table is full of water now.
+Gergő Tóth: blender? Blender. Yeah, indeed. Okay. with us. The mut is also something we want to include. Yes. Okay. Let's talk about next to haves. Uh, for example, special diets, catering to special diets, categorizing ingredients, tracking nutrition three. Um, we've talked about madame loving good deals. So maybe says on push. Um, okay. Do do we have anything to add for the MVP or the nice to haves or anything?
+Kitana Kovács: Was
+Gergő Tóth: Or we can go to the most important data. you think?
+Kitana Kovács: this a question for me?
+Gergő Tóth: I think. Okay, that's okay. Yeah. So, let's talk about most important data or actions. Let's the most important data or actions are the the recipes.
+ 
+ 
+01:07:19
+ 
+Kitana Kovács: the recipe database.
+Gergő Tóth: Okay, let's let's look at the problem we want to solve. It's the inability to decide what to eat and find recipes. Is this enough to have the inability to decide what to eat? Well, I mean, it slims down your options. So you do not have this decision uh fatigue that you get from way too many options. Okay. So listing. Oh, listing recipes. Saving listing and saving. Listing. Listing. Recommending. Saving recipes. And I think what else what's important is the ad hoc give me a recipe I can cook with my ingredients. So uh at hog give me a recipe feature I think those are yes the shopping part is I think is beyond that it's a bit just like the yes part. Yeah, but the give give me a recipe is the most important. You can just slide down the container. I don't want to cook this. I want to cook this. Okay, that I am not serious about this.
+ 
+ 
+01:08:59
+ 
+Gergő Tóth: Yeah, we put it totally. Okay. So, let's dump some features recipe like anything extra that could be useful or just fun to have. Uh any social site? We talk about social sharing. Yeah, it's sharing. That's what social sharing.
+Kitana Kovács: It's like a a flavor discovery or culture discovery.
+Gergő Tóth: Oh, that's nice. Like if it could ask me, do did you like this recipe? Would you like more of this? or like including viral Tik Tok recipes. Got the icing
+Kitana Kovács: Just five minute pastas for greedy John.
+Gergő Tóth: trendy recipes like Okay, let's just call it Tik Tok recipes. Yeah.
+Kitana Kovács: Do we put the shopping list
+Gergő Tóth: It will like a recipe highlight that you know users are making this right now. People are loving this. Sorry, can you repeat this? Like a recipe highlight. You know, like users have made this the most this way. Ah, okay. So, like most like recipes. Yeah.
+ 
+ 
+01:11:16
+ 
+Gergő Tóth: Editor speak. Yeah. Highlight editor speak. I was also talking about uh like stepby-step guides like you can just like very clearly it's just you know press next press next not just like novel this is how you do it maybe we could also add some illustrations cooking tips illustrations nice how to cook tips like how a sauteed onion should look like Mhm. H um select tips like how something should look like. I think it would be or like save them temperatures for cooking meat like I think this should be tied to like a profile where you can just set your um cooking mastery that I am so like on the on boarding like there should be like an onboarding. Yeah. wording where it's like what is your my cooking mastery level my kitchen equipment how much time I have equipment like how do I cook like do I prefer like fast meals or do you want like the more technical meals that might be better tasting. So cooking style let's say then cooking sty and maybe uh preferred kitchens like I mean like culture preferred taste profiles. Guys, I think we have enough. Do you have anything to add? I think this is for a quick prototyping is good.
+Kitana Kovács: Yeah, for a first iteration and then we can work on it later and refine it.
+Gergő Tóth: Yeah. Okay. This was almost an hour.
+Kitana Kovács: Ana, how do you feel about your product?
+Gergő Tóth: This is your product. Do you like it? I like my product. Yes. You should. Two amazing designers. Exactly. All right. Let's stop the transcription
+Kitana Kovács: Mhm.
+ 
+ 
+Transcription ended after 01:14:27
+
+This editable transcript was computer generated and might contain errors. People can also change the text after it was created.

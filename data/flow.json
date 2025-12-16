@@ -1,265 +1,192 @@
 {
-  "start": "widget",
+  "start": "home",
   "nodes": [
     {
-      "id": "widget",
+      "id": "home",
       "kind": "page",
-      "title": "Home Dashboard Widget",
+      "title": "Home",
       "data": {
-        "location": "Bank app home dashboard",
-        "appearance": {
-          "style": "Card",
-          "visualIdentity": "Enlight light/brightness",
-          "palette": "Bank colors",
-          "copy": "Boost your knowledge, earn rewards."
-        },
-        "triggerOptions": [
-          "After balance check",
-          "Post-transaction",
-          "When exploring savings products"
-        ],
-        "action": "Tap to start Enlight onboarding"
+        "description": "Landing page with overview of features and entry points: get inspired with a recipe, meal planning, ingredient inventory, saved recipes, onboarding for first time users"
       }
     },
     {
-      "id": "onboarding-learn",
-      "kind": "page",
-      "title": "Onboarding Screen - Learn",
+      "id": "onboarding",
+      "kind": "decision",
+      "title": "Onboarding",
       "data": {
-        "content": "Enhance your financial skills.",
-        "illustration": true,
-        "cta": "Get Started"
+        "questions": [
+          "What is your cooking mastery level?",
+          "What kitchen equipment do you have?",
+          "How much time do you prefer to spend cooking?",
+          "Do you have preferred cuisines/flavor profiles?",
+          "Any allergies or special diets?"
+        ]
       }
     },
     {
-      "id": "onboarding-earn",
+      "id": "get-recipe",
       "kind": "page",
-      "title": "Onboarding Screen - Earn",
+      "title": "Recipe Suggestion",
       "data": {
-        "content": "Complete challenges to gain points.",
-        "illustration": true,
-        "cta": "Get Started"
+        "description": "Core feature. User enters available ingredients and gets recipe suggestions, can ask for random inspiration or search by filters. Includes ability to browse trending/TikTok recipes."
       }
     },
     {
-      "id": "onboarding-redeem",
+      "id": "ingredient-inventory",
       "kind": "page",
-      "title": "Onboarding Screen - Redeem",
+      "title": "Ingredient Inventory",
       "data": {
-        "content": "Exchange points for rewards.",
-        "illustration": true,
-        "cta": "Get Started"
+        "description": "Page for adding and updating ingredients available at home; includes automatic deduction of used items after cooking, and manual adjustment. View who added what in shared households."
       }
     },
     {
-      "id": "bank-sso-link",
+      "id": "meal-planner",
+      "kind": "page",
+      "title": "Meal Planner Calendar",
+      "data": {
+        "description": "Weekly calendar to plan meals. Drag and drop recipes to days. Shows shopping checklist for missing ingredients."
+      }
+    },
+    {
+      "id": "shopping-list",
+      "kind": "page",
+      "title": "Shopping List",
+      "data": {
+        "description": "Auto-generated shopping list from planned recipes and current inventory. User can check off items; includes push notification/reminder for unmet ingredients before meal dates."
+      }
+    },
+    {
+      "id": "saved-recipes",
+      "kind": "page",
+      "title": "Saved Recipes",
+      "data": {
+        "description": "User can save favorite recipes for later, organize by categories, add notes, and mark as 'made' or rate for future recommendations."
+      }
+    },
+    {
+      "id": "recipe-details",
+      "kind": "page",
+      "title": "Recipe Details",
+      "data": {
+        "description": "Step-by-step guides with illustrations, cooking tips, timers, and equipment adaptations if needed. Includes sharing options and ability to rate/like recipes."
+      }
+    },
+    {
+      "id": "profile",
+      "kind": "page",
+      "title": "User Profile",
+      "data": {
+        "description": "Manage preferences: cooking level, kitchen inventory, dietary restrictions, notification settings, and social sharing settings."
+      }
+    },
+    {
+      "id": "reminder-action",
       "kind": "action",
-      "title": "Bank SSO Link",
+      "title": "Ingredient Reminder",
       "data": {
-        "description": "Link Bank SSO with Enlight profile to tie points and progress"
+        "description": "Sends a notification to remind users to buy missing ingredients ahead of planned meals."
       }
     },
     {
-      "id": "dashboard",
-      "kind": "page",
-      "title": "Enlight Dashboard",
+      "id": "social-sharing",
+      "kind": "action",
+      "title": "Social Sharing",
       "data": {
-        "elements": [
-          "Points balance display",
-          "Progress tracker",
-          "Tabs: Missions, Quizzes, Rewards",
-          "Personalized suggestions"
-        ]
-      }
-    },
-    {
-      "id": "missions-list",
-      "kind": "page",
-      "title": "Mission List",
-      "data": {
-        "elements": [
-          "Missions with progress bar and reward",
-          "Filters: Active/Completed/Upcoming"
-        ]
-      }
-    },
-    {
-      "id": "mission-detail",
-      "kind": "page",
-      "title": "Mission Detail",
-      "data": {
-        "elements": [
-          "Full description",
-          "Steps",
-          "Deadline",
-          "Point value",
-          "FAQ: How this works",
-          "CTA: Start Mission"
-        ]
-      }
-    },
-    {
-      "id": "mission-progress",
-      "kind": "page",
-      "title": "Mission Progress",
-      "data": {
-        "elements": [
-          "Live tracker",
-          "Partial-progress feedback",
-          "Banking function link"
-        ]
-      }
-    },
-    {
-      "id": "mission-complete",
-      "kind": "page",
-      "title": "Mission Completion",
-      "data": {
-        "elements": [
-          "Celebration animation",
-          "Badge unlock",
-          "Points confirmation",
-          "CTA: Go to Rewards"
-        ]
-      }
-    },
-    {
-      "id": "quizzes-list",
-      "kind": "page",
-      "title": "Quiz Selection",
-      "data": {
-        "elements": [
-          "Quiz library with theme, difficulty, time, points"
-        ]
-      }
-    },
-    {
-      "id": "quiz-intro",
-      "kind": "page",
-      "title": "Quiz Intro",
-      "data": {
-        "elements": [
-          "Title",
-          "Description",
-          "Learning outcome",
-          "Points reward",
-          "CTA: Start Quiz"
-        ]
-      }
-    },
-    {
-      "id": "quiz-question",
-      "kind": "page",
-      "title": "Quiz Question",
-      "data": {
-        "elements": [
-          "Scenario prompt",
-          "Multiple-choice answers",
-          "Immediate feedback",
-          "Question progress indicator",
-          "Option to exit/resume"
-        ]
-      }
-    },
-    {
-      "id": "quiz-complete",
-      "kind": "page",
-      "title": "Quiz Completion",
-      "data": {
-        "elements": [
-          "Final score",
-          "Points earned",
-          "Knowledge recap",
-          "CTA: Retry for bonus or Go to Rewards"
-        ]
-      }
-    },
-    {
-      "id": "rewards-catalog",
-      "kind": "page",
-      "title": "Rewards Catalog",
-      "data": {
-        "categories": [
-          "Financial perks (cashback, fee waivers, bonuses)",
-          "Lifestyle (gift cards, discounts, cinema tickets)",
-          "Charitable donations"
-        ],
-        "layout": "Shop-like UI with filters, categories, cost, and redeem button"
-      }
-    },
-    {
-      "id": "notifications",
-      "kind": "page",
-      "title": "Notifications/Engagement",
-      "data": {
-        "examples": [
-          "Point milestone nudges",
-          "New mission/seasonal quiz alerts"
-        ],
-        "requirement": "Subtle and opt-in, compliant with banking standards"
-      }
-    },
-    {
-      "id": "profile-badges",
-      "kind": "page",
-      "title": "Profile & Badges",
-      "data": {
-        "badges": [
-          "Quiz Master",
-          "Savings Starter"
-        ],
-        "progression": "Titles & tiers",
-        "motivation": "Social/status"
-      }
-    },
-    {
-      "id": "settings",
-      "kind": "page",
-      "title": "Settings & Preferences",
-      "data": {
-        "elements": [
-          "Opt-in notifications",
-          "Language selection",
-          "Accessibility options"
-        ]
+        "description": "Share recipes or planning success via social media or with other app users/household members."
       }
     }
   ],
   "edges": [
     {
-      "from": "widget",
-      "to": "onboarding-learn"
+      "from": "home",
+      "to": "onboarding",
+      "when": "First time user or settings reset"
     },
     {
-      "from": "onboarding-learn",
-      "to": "onboarding-earn"
+      "from": "home",
+      "to": "get-recipe"
     },
     {
-      "from": "onboarding-earn",
-      "to": "onboarding-redeem"
+      "from": "home",
+      "to": "meal-planner"
     },
     {
-      "from": "onboarding-redeem",
-      "to": "bank-sso-link"
+      "from": "home",
+      "to": "ingredient-inventory"
     },
     {
-      "from": "bank-sso-link",
-      "to": "dashboard"
+      "from": "home",
+      "to": "saved-recipes"
     },
     {
-      "from": "dashboard",
-      "to": "missions-list",
-      "when": "Selects Missions tab"
+      "from": "home",
+      "to": "profile"
     },
     {
-      "from": "dashboard",
-      "to": "quizzes-list",
-      "when": "Selects Quizzes tab"
+      "from": "onboarding",
+      "to": "get-recipe"
     },
     {
-      "from": "dashboard",
-      "to": "rewards-catalog",
-      "when": "Selects Rewards tab"
+      "from": "onboarding",
+      "to": "meal-planner"
+    },
+    {
+      "from": "get-recipe",
+      "to": "recipe-details",
+      "when": "User selects a recipe"
+    },
+    {
+      "from": "get-recipe",
+      "to": "saved-recipes",
+      "when": "User saves/favorites a recipe"
+    },
+    {
+      "from": "get-recipe",
+      "to": "ingredient-inventory",
+      "when": "User wants to add another ingredient"
+    },
+    {
+      "from": "recipe-details",
+      "to": "meal-planner",
+      "when": "User adds recipe to calendar"
+    },
+    {
+      "from": "recipe-details",
+      "to": "saved-recipes",
+      "when": "User saves/favorites recipe"
+    },
+    {
+      "from": "meal-planner",
+      "to": "shopping-list"
+    },
+    {
+      "from": "meal-planner",
+      "to": "reminder-action"
+    },
+    {
+      "from": "shopping-list",
+      "to": "ingredient-inventory",
+      "when": "User updates inventory after shopping"
+    },
+    {
+      "from": "recipe-details",
+      "to": "ingredient-inventory",
+      "when": "Recipe cooked—deduct ingredients"
+    },
+    {
+      "from": "profile",
+      "to": "onboarding",
+      "when": "User edits cooking preferences or equipment"
+    },
+    {
+      "from": "saved-recipes",
+      "to": "recipe-details",
+      "when": "User opens saved recipe"
+    },
+    {
+      "from": "recipe-details",
+      "to": "social-sharing",
+      "when": "User shares recipe"
     }
   ]
 }

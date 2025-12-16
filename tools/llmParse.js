@@ -28,7 +28,7 @@ const flowSchema = z.object({
 
 // ---------- 2️⃣ Paths ----------
 const root = process.cwd();
-const transcriptPath = path.join(root, "data", "functional_specification.txt");
+const transcriptPath = path.join(root, "data", "ejajworkshop.txt");
 const flowPath = path.join(root, "data", "flow.json");
 
 // ---------- 3️⃣ Check transcript ----------

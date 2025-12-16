@@ -126,7 +126,7 @@ function extractJsonFromResponse(text) {
 export async function mapFlowToUISpec(flow) {
   console.log("🎨 Starting LLM-powered UI mapping...");
 
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.OPENAI_API_KEY2) {
     console.error("❌ OPENAI_API_KEY not found in environment");
     throw new Error("Missing API key");
   }

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "parse:llm": "node tools/llmParse.js",
     "map": "node tools/mapToUISpec.js",
-    "gen": "node tools/generateReact.js",
+    "generate": "node tools/generateReactWithOpenai.js",
     "build:from:txt": "npm run parse:llm && npm run map && npm run gen",
     "dev": "vite"
   },
